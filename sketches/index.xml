@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Hugo Themes</title>
+    <link>https://stevenschuerstedt.github.io/sketches/</link>
+    <description>Recent content on Hugo Themes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Copyright © 2008–2019, Steve Francia and the Hugo Authors; all rights reserved.</copyright>
+    <lastBuildDate>Fri, 31 Dec 2021 09:23:31 +0000</lastBuildDate><atom:link href="https://stevenschuerstedt.github.io/sketches/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Soziopolitics</title>
+      <link>https://stevenschuerstedt.github.io/sketches/freiheit/</link>
+      <pubDate>Fri, 31 Dec 2021 09:23:31 +0000</pubDate>
+      
+      <guid>https://stevenschuerstedt.github.io/sketches/freiheit/</guid>
+      <description>Eliud Kipchoge spricht über Freiheit.
+ Frei ist nur der, der absolut Diszipliniert ist Kipchoge ist Marathonläufer und trainiert nach einem absolut strengen trainingsplan Wie kann er dabei Frei sein? Ist es nicht ein Wiederspruch? =&amp;gt; Er ist nicht seinen Emotionen und Stimmungen unterlegen, nicht den Wetter oder äußeren Einflussen, nicht seinen Körper =&amp;gt; Er fühlt sich frei in dem was er tut, auch wenn es von außen nicht so wirkt  Ist ein reicher Mensch frei, der tun und lassen kann was er will?</description>
+    </item>
+    
+    <item>
+      <title>Soziopolitics</title>
+      <link>https://stevenschuerstedt.github.io/sketches/soziopolitics/</link>
+      <pubDate>Mon, 27 Dec 2021 09:23:31 +0000</pubDate>
+      
+      <guid>https://stevenschuerstedt.github.io/sketches/soziopolitics/</guid>
+      <description>=&amp;gt; vom speziellen zum generellen
+  Demografischer Wandel
+  Altern der Bevölkerung (mehr Alte als Junge)(kann nur übergangsweise auftreten)
+  Generationenvertrag =&amp;gt; &amp;ldquo;Vertrag&amp;rdquo; so dass Junge rente für Alte erwirtschaften
+  Fachkräftemangel in D, Abwanderung, keine Willkommenskultur
+  niedrige Geburtenrate, typisch für Industriestaaten
+  CDU, politik für alte, von Alten für Alte, betroffene Generation kann nicht mitreden
+  </description>
+    </item>
+    
+    <item>
+      <title>Quantum Optimization</title>
+      <link>https://stevenschuerstedt.github.io/sketches/quantum_optimization/</link>
+      <pubDate>Mon, 08 Nov 2021 16:36:38 +0000</pubDate>
+      
+      <guid>https://stevenschuerstedt.github.io/sketches/quantum_optimization/</guid>
+      <description>$$\newcommand{\bra}[1]{\left&amp;lt;#1\right|}\newcommand{\ket}[1]{\left|#1\right&amp;gt;}\newcommand{\bk}[2]{\left&amp;lt;#1\middle|#2\right&amp;gt;}\newcommand{\bke}[3]{\left&amp;lt;#1\middle|#2\middle|#3\right&amp;gt;}$$
+Using Quantum Computing for hard (np) combinatorial problems. These problems cannot really be solved efficiently classically (only by limiting to certain problem instances, using heuristics), so the question is if there could be a significant speedup using Quantum Computing.
+Quantum algorithm paradigms  Quantum Fourier Transformation Grover Operator Harrow-Hassidim-Lloyd variational quantum eingenvalue solver (VQE) direct Hamiltonian simulation (SIM)  Traveling Salesman &amp;amp; Orienteering Problem  NP Hard Problems (solution can be verified in polynomial time) can be stated as NP-Complete Problems (as hard as any problem in NP, only decision problems)  Note: only the worst case instances are NP hard (these instance are not easy to construct), in practice a lot of instance can be solved in P time.</description>
+    </item>
+    
+    <item>
+      <title>Audio from scratch</title>
+      <link>https://stevenschuerstedt.github.io/sketches/audio-from-scratch/</link>
+      <pubDate>Thu, 14 Oct 2021 16:36:38 +0000</pubDate>
+      
+      <guid>https://stevenschuerstedt.github.io/sketches/audio-from-scratch/</guid>
+      <description>How does low level audio work? =&amp;gt; soundwaves create by pushing air with a membran (speaker)
+Use the Basys3 FPGA to generate a valid analog audio signal? (Klinkenstecker) Audio needs an analog signal but the basys3 only operates on digital signals, use pulse width modulation?
+https://www.instructables.com/Basys3-FPGA-Digital-Audio-Synthesizer/
+Create a .wav file from scratch using C++ https://de.wikipedia.org/wiki/RIFF_WAVE
+Create a audio synthesizer in C++ ?
+How does audio work on the low level in windows?</description>
+    </item>
+    
+    <item>
+      <title>Quantum Computing Basics</title>
+      <link>https://stevenschuerstedt.github.io/sketches/quantum_computing_basics/</link>
+      <pubDate>Thu, 14 Oct 2021 16:36:38 +0000</pubDate>
+      
+      <guid>https://stevenschuerstedt.github.io/sketches/quantum_computing_basics/</guid>
+      <description>$$\newcommand{\bra}[1]{\left&amp;lt;#1\right|}\newcommand{\ket}[1]{\left|#1\right&amp;gt;}\newcommand{\bk}[2]{\left&amp;lt;#1\middle|#2\right&amp;gt;}\newcommand{\bke}[3]{\left&amp;lt;#1\middle|#2\middle|#3\right&amp;gt;}$$
+Classical Computation with Linear Algebra one bit system
+$\left(\begin{array}{c} 1 \cr 0 \end{array}\right)$ $\begin{matrix}0 \cr 1 \end{matrix}$, this means the bit is in state 0
+$\left(\begin{array}{c} 0 \cr 1 \end{array}\right)$ $\begin{matrix}0 \cr 1 \end{matrix}$, this bit is in state 1
+For a two bit system we consider the tensor product between two arbitrary one bit systems
+$$\left(\begin{array}{c} 0 \cr 1 \end{array}\right) \otimes \left(\begin{array}{c} 1 \cr 0 \end{array}\right) = \left(\begin{array}{c} 0 \cr 0 \cr 1 \cr 0 \end{array}\right) \begin{matrix}00 \cr 01 \cr 10 \cr 11 \end{matrix}$$</description>
+    </item>
+    
+    <item>
+      <title>Genealogie</title>
+      <link>https://stevenschuerstedt.github.io/sketches/genealogie/</link>
+      <pubDate>Wed, 25 Aug 2021 08:12:42 +0000</pubDate>
+      
+      <guid>https://stevenschuerstedt.github.io/sketches/genealogie/</guid>
+      <description>Vorfahren Stadt Land Kultur Mensch Leben
+Das beschäftigen mit meiner eigenen Geschichte, wer sind meine Eltern, meine Großeltern? Woher kommen Sie? Wie haben Sie gelebt? Informationen aus Erzählungen und direkten Fragen von Betroffenen. Daraus entwickeln sich prinzpiellere Fragen, woher kommt ein Ort an den meine Vorfahren gelebt haben? Wie hat sich mein Land entwickelt? Wie haben sich Kulturen entwickelt? Fragen aus dem Bereich Geschichte.
+Aber die Fragen lassen sich noch abstrakter formulieren, woher kommen eigentlich die Menschen an sich?</description>
+    </item>
+    
+    <item>
+      <title>What is Computation?</title>
+      <link>https://stevenschuerstedt.github.io/sketches/what-is-computation/</link>
+      <pubDate>Mon, 24 May 2021 09:23:31 +0000</pubDate>
+      
+      <guid>https://stevenschuerstedt.github.io/sketches/what-is-computation/</guid>
+      <description>Gödels imcompletness theorem, true statements that cannot be proven
+=&amp;gt; question about number theory, goldbach conjecture etc
+turing machine =&amp;gt; halting problem, undecidable
+halting problem is a well defined problem, all needed information is given, and the answer can be yes / no, but still no algorithm possible.
+(compare to things like, what is the meaning of life? does god exist? =&amp;gt; ok there is no algorithm for that….)
+asking wether a TM halts or not seems innocent, but you ask for a prove for every math problem there is.</description>
+    </item>
+    
+    <item>
+      <title>SteviePhysics</title>
+      <link>https://stevenschuerstedt.github.io/sketches/steviephysics/</link>
+      <pubDate>Wed, 14 Apr 2021 14:34:04 +0000</pubDate>
+      
+      <guid>https://stevenschuerstedt.github.io/sketches/steviephysics/</guid>
+      <description>Simple Physik Engine für 2D. Nicht für Spiele bzw. interaktive Echtzeitanwendungen sondern einfach nur viel Physik. Gute Möglichkeit um die physikalischen Formel in der “Praxis” auszuprobieren.
+Der Schiefe Wurf, ein einfacher Start Wir befinden uns in der klassischen Mechanik und beginnen mit Newtons Gesetzt. “Kraft gleich Masse mal Beschleunigung”. Was ist Kraft? Da hört unsere Vorstellung auf, aber es funktioniert ja alles gut.
+Zu beachten ist das sowohl die Kraft als auch die Beschleunigung eine vektorielle Größe sind, also eine Richtung haben.</description>
+    </item>
+    
+    <item>
+      <title>StevieSnake – on bare metal</title>
+      <link>https://stevenschuerstedt.github.io/sketches/stevieos/</link>
+      <pubDate>Thu, 26 Nov 2020 18:12:08 +0000</pubDate>
+      
+      <guid>https://stevenschuerstedt.github.io/sketches/stevieos/</guid>
+      <description>Nach den 8bit Computer ist die spannende Frage wie die einfachen Prinzipien sich auf ein modernes PC System übertragen. Mein Ziel ist es für ein modernen Prozessor ein einfaches Spiel on bare metal, also quasi ohne jegliche Hilfsmittel zu programmieren. Dabei wird schnell klar das ein modernes System viel komplizierter ist als der 8bit Computer, und auch viel komplizierter als es eigentlich hätte sein müssen. Gründe dafür sind vor allem praktischer Natur, zum einen die strenge Rückwärtskompatibilität und die Zurückhaltung von Informationen.</description>
+    </item>
+    
+    <item>
+      <title>Etwas Quantenmechanik</title>
+      <link>https://stevenschuerstedt.github.io/sketches/physik/</link>
+      <pubDate>Sun, 26 Apr 2020 16:36:38 +0000</pubDate>
+      
+      <guid>https://stevenschuerstedt.github.io/sketches/physik/</guid>
+      <description>Die Quantenmechanik ist eine faszinierende Theorie die unglaublich effektiv verschiedene physikalische Phänomene erklärt. Dabei ist ihr theoretischer Aufbau aber keineswegs einfach zugänglich und auch logisch nachvollziehbar. Harald Lesch sagte zur Quantentheorie: Der Erfolg heiligt die Mittel. Die Theorie ist nicht schön, teilweise sogar abstrus und scheinbar widersprüchlich zu Alltagserfahrungen eines Menschen, aber ihr Erfolg, der vielmals experimentell bestätigt wurde, gibt ihr Recht. Viele führende Physiker, wie z.B. Alber Einstein, waren mit der Theorie unzufrieden und überlegten sich komplexe Gedankenexperimente um die scheinbare Widersprüchlichkeit der Theorie zu offenbaren (das Einstein-Podolsky-Rosen-Paradoxon), aber diese Vorhaben endeten nur in einem tieferen Verständnis der Theorie.</description>
+    </item>
+    
+  </channel>
+</rss>

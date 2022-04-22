@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title> What is Computation? - Hugo Themes </title>
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="referrer" content="no-referrer">
+    <meta name="description" content="" />
+    <meta property="og:site_name" content="Hugo Themes" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://stevenschuerstedt.github.io/sketches/what-is-computation/" />
+    <meta property="og:title" content="What is Computation?" />
+    <meta property="og:image" content="https://stevenschuerstedt.github.io/" />
+    <meta property="og:description" content="" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    
+    <meta name="twitter:title" content="What is Computation?" />
+    <meta name="twitter:description" content="" />
+    <meta name="twitter:image" content="https://stevenschuerstedt.github.io/" />
+
+    <link rel="canonical" href="https://stevenschuerstedt.github.io/sketches/what-is-computation/">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha512-MoRNloxbStBcD8z3M/2BmnT+rg4IsMxPkXaGh2zD6LGNNFE80W3onsAhRcMAMrSoyWL9xD7Ert0men7vR8LUZg==" crossorigin="anonymous" />
+
+    <link rel="stylesheet" href="https://stevenschuerstedt.github.io/css/custom.css" />
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/github-gist.min.css" integrity="sha512-od7JLoOTxM8w/HSKGzP9Kexc20K9p/M2zxSWsd7H1e4Ctf+8SQFtCWEZnW5u6ul5ehSECa5QmOk9ju2nQMmlVA==" crossorigin="anonymous" />
+    
+
+    
+
+    <link rel="shortcut icon"
+        href="https://stevenschuerstedt.github.io/images/favicon.png">
+
+    
+    <link href="https://stevenschuerstedt.github.io/index.xml" rel="alternate" type="application/rss+xml" title="Hugo Themes" />
+    
+</head>
+
+<body>
+    
+    <div class="mt-xl header">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-auto">
+                <a href="https://stevenschuerstedt.github.io/">
+                    <h1 class="name">Steven Schürstedt</h1>
+					
+                </a>
+            </div>
+			<img src="https://stevenschuerstedt.github.io//ich.jpg" width="100" height="100" alt="Selfhtml">
+        </div>
+
+        <div class="row justify-content-center">
+            <ul class="nav nav-primary">
+                
+                <li class="nav-item">
+                    <a class="nav-link" href="/">
+                        
+                        Home
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link" href="/sketches/">
+                        
+                        Sketches
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link" href="/ideas/">
+                        
+                        Ideas
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link" href="/about/">
+                        
+                        About
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
+    </div>
+</div>
+
+    <div class="content">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-sm-12 col-lg-8">
+                    <h1 class="mx-0 mx-md-4">What is Computation?</h1>
+                    <div class="markdown">
+                        
+    <p>Gödels imcompletness theorem, true statements that cannot be proven</p>
+<p>=&gt; question about number theory, goldbach conjecture etc</p>
+<p>turing machine =&gt; halting problem, undecidable</p>
+<p>halting problem is a well defined problem, all needed information is given, and the answer can be yes / no, but still no algorithm possible.</p>
+<p>(compare to things like, what is the meaning of life? does god exist? =&gt; ok there is no algorithm for that….)</p>
+<p>asking wether a TM halts or not seems innocent, but you ask for a prove for every math problem there is. (goldbach conjecture)</p>
+<p>related to alot of other problems, solving polynomial equations, wang tiles etc</p>
+<p>=&gt; always problem of self reference</p>
+<p>Cantor set theory</p>
+<p>Why is this stuff helpful?</p>
+<p>It reflects about what an algorithm is, what we do when we add two numbers etc. When we understand what algorithms are and how they work, we can construct machines to execute that algorithm.</p>
+<p>=&gt; first mechanical calculaters, baggage, difference machine</p>
+<p>=&gt; computer uses circuits, boolean algebra, idea of universality</p>
+<h3 id="gödel">Gödel</h3>
+<p>Formale Systeme:
+Starte mit irgendwas: 1 (Axiome)
+Regeln für Weiter: 1 -&gt; 101 0 -&gt; 011 (Schlussregeln)</p>
+<p>=&gt; Aus den Axiomen können Dinge abgeleitet werden
+1 -&gt; 101 -&gt; 10111 -&gt; &hellip;
+Zwei Ebenen: - sytaktische Ebene, Symbole nach strikten Regeln manipulieren</p>
+<ul>
+<li>semantische Ebene, Symbole (willkürliche) Bedeutung geben
+Interessant: Ebenen lassen sich verknüpfen! Regeln, Axiome können so gewählt werden das es tatstächlich Sinn ergibt.
+=&gt; Prädikatenlogik, Principia Mathematica, TNT (GEB)
+Systeme sprechen über Mathematik, natürliche Zahlen. Lassen sich alle &ldquo;richtige&rdquo; Aussagen so darstellen, ableiten?
+Paeno Axiome für natürliche Zahlen</li>
+</ul>
+<p>Formales System um ÜBER natürliche Zahlen zu sprechen? Aber in wahrheit trugschluss, natürliche Zahlen sind ein formales System, im Grunde sind alle Formalen Systeme gleich, will über sich selber sprechen
+=&gt; widerspruch, man kann nur bis zu einem bestimmten Grad über sich selber sprechen?</p>
+<p>Gödelisierung entscheidende Einsicht?
+Jede Formel die auf der semantischen Ebene über die natürlichen Zahlen spricht, lässt sich auch in sie übersetzen.
+=&gt; Jedes Element in Zahl codieren
+=&gt; jede Regel mit Zahlen manipulation darstellen
+=&gt; Algebra auch nur ein &ldquo;bedeutungsleeres&rdquo; Formales System
+=&gt; Formel ist gleichzeitig das was sie eigentlich sagen will? Kreisschluss?
+=&gt; Formales System in ein anderes überführen?</p>
+<p>Gödel zeigt / bzw. erschafft Zusammenhang indem er seinen Blickwinkel verändert. Dieser Zusammenhang ist eigentlich schon die ganze Zeit da? Oder wird er erst erschaffen nachdem Gödel seine Subjektive sicht ändert? Objekt kann verändert werden, indem man nicht das Objekt verändert sondern seine Subjektive wahrnehmung verändert. =&gt; eigentlich nichts neues&hellip; siehe lehrer schüler lob/tadel experiment
+=&gt; kindheitserfahrung: objekt unter bett, wenn ich nur fest genug daran glaube, mich selbst davon überzeuge, dann ist es nicht da
+=&gt; vgl. Quantum Mechanic, Messung mit Observer, Schrödinger eq. nicht richtig für messung, könnte ein Gedanke/Geistezustand die Messung beeinflussen? (Ich stelle mir vor das Ergebnis der Messung wird x sein)</p>
+<p>Aussagen über Formel sind so möglich,
+Formel
+Ich bin unbeweisbar =&gt; Lügner Paradoxon
+ist eine vollkommen akzeptierbare Formel, aber schwierig, führt zu Widerspruch im Systeme</p>
+<p><a href="http://us.metamath.org/mm_100.html">http://us.metamath.org/mm_100.html</a> zeigt, formale beweise sind möglich für vieles. (genauso in prinicipa mathematica gezeigt)</p>
+<p>vergleich: Sprache
+syntax einzelner Buchstaben vs. semantik eines wortes
+ein wort ist mehr als seine buchstaben, buchstaben sind willkürlich aneinandergereiht, woher kommt der sinn?
+ein satz ist mehr als seine wörter, sinn eines satzes? man kann jedes wort in einem satz verstehen, aber dennoch nicht den satz
+jedes wort verstehen vs das verstehen was jemand versucht zu sagen, was die wörter ausdrücken</p>
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section id="comments">
+    <div class="py-3 content">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-sm-12 col-lg-8">
+                    <div class="comments">
+                        <script src="https://utteranc.es/client.js" repo=""
+                            issue-term="pathname" label="comment" theme="github-light" crossorigin="anonymous" async>
+                            </script>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+    
+
+
+    
+
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/highlight.min.js" integrity="sha512-TDKKr+IvoqZnPzc3l35hdjpHD0m+b2EC2SrLEgKDRWpxf2rFCxemkgvJ5kfU48ip+Y+m2XVKyOCD85ybtlZDmw==" crossorigin="anonymous"></script>
+        
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/r.min.js" defer></script>
+        
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/python.min.js" defer></script>
+        
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/stan.min.js" defer></script>
+        
+        <script>
+            window.addEventListener('load', function() {
+                hljs.initHighlighting();
+            }, true);
+        </script>
+    
+
+    
+
+    
+    
+        
+
+    
+</body>
+
+</html>
