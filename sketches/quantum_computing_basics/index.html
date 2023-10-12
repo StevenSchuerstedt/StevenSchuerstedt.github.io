@@ -1,0 +1,310 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title> Quantum Computing Basics - Hugo Themes </title>
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="referrer" content="no-referrer">
+    <meta name="description" content="" />
+    <meta property="og:site_name" content="Hugo Themes" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://stevenschuerstedt.github.io/sketches/quantum_computing_basics/" />
+    <meta property="og:title" content="Quantum Computing Basics" />
+    <meta property="og:image" content="https://stevenschuerstedt.github.io/" />
+    <meta property="og:description" content="" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    
+    <meta name="twitter:title" content="Quantum Computing Basics" />
+    <meta name="twitter:description" content="" />
+    <meta name="twitter:image" content="https://stevenschuerstedt.github.io/" />
+
+    <link rel="canonical" href="https://stevenschuerstedt.github.io/sketches/quantum_computing_basics/">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha512-MoRNloxbStBcD8z3M/2BmnT+rg4IsMxPkXaGh2zD6LGNNFE80W3onsAhRcMAMrSoyWL9xD7Ert0men7vR8LUZg==" crossorigin="anonymous" />
+
+    <link rel="stylesheet" href="https://stevenschuerstedt.github.io/css/custom.css" />
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/github-gist.min.css" integrity="sha512-od7JLoOTxM8w/HSKGzP9Kexc20K9p/M2zxSWsd7H1e4Ctf+8SQFtCWEZnW5u6ul5ehSECa5QmOk9ju2nQMmlVA==" crossorigin="anonymous" />
+    
+
+    
+
+    <link rel="shortcut icon"
+        href="https://stevenschuerstedt.github.io/images/favicon.png">
+
+    
+    <link href="https://stevenschuerstedt.github.io/index.xml" rel="alternate" type="application/rss+xml" title="Hugo Themes" />
+    
+</head>
+
+<body>
+    
+    <div class="mt-xl header">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-auto">
+                <a href="https://stevenschuerstedt.github.io/">
+                    <h1 class="name">Steven Schürstedt</h1>
+					
+                </a>
+            </div>
+			<img src="https://stevenschuerstedt.github.io//ich.jpg" width="100" height="100" alt="Selfhtml">
+        </div>
+
+        <div class="row justify-content-center">
+            <ul class="nav nav-primary">
+                
+                <li class="nav-item">
+                    <a class="nav-link" href="/">
+                        
+                        Home
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link" href="/sketches/">
+                        
+                        Sketches
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link" href="/about/">
+                        
+                        About
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
+    </div>
+</div>
+
+    <div class="content">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-sm-12 col-lg-8">
+                    <h1 class="mx-0 mx-md-4">Quantum Computing Basics</h1>
+                    <div class="markdown">
+                        
+    <p>$$\newcommand{\bra}[1]{\left&lt;#1\right|}\newcommand{\ket}[1]{\left|#1\right&gt;}\newcommand{\bk}[2]{\left&lt;#1\middle|#2\right&gt;}\newcommand{\bke}[3]{\left&lt;#1\middle|#2\middle|#3\right&gt;}$$</p>
+<h3 id="classical-computation-with-linear-algebra">Classical Computation with Linear Algebra</h3>
+<p>one bit system</p>
+<p><code>$\left(\begin{array}{c} 1 \cr 0 \end{array}\right)$</code> <code>$\begin{matrix}0 \cr 1 \end{matrix}$</code>, this means the bit is in state 0</p>
+<p><code>$\left(\begin{array}{c} 0 \cr 1 \end{array}\right)$</code> <code>$\begin{matrix}0 \cr 1 \end{matrix}$</code>, this bit is in state 1</p>
+<p>For a two bit system we consider the tensor product between two arbitrary one bit systems</p>
+<p>$$\left(\begin{array}{c} 0 \cr 1 \end{array}\right) \otimes \left(\begin{array}{c} 1 \cr 0 \end{array}\right) = \left(\begin{array}{c} 0 \cr 0 \cr 1 \cr 0 \end{array}\right) \begin{matrix}00 \cr 01 \cr 10 \cr 11 \end{matrix}$$</p>
+<h4 id="dirac-notation">Dirac-Notation</h4>
+<p>The base states for one bit are</p>
+<p>$$\ket{0} = \left(\begin{array}{c} 1 \cr 0 \end{array}\right)$$</p>
+<p>$$\ket{1} = \left(\begin{array}{c} 0 \cr 1 \end{array}\right)$$</p>
+<p>The tensor product between some one bit states can be written as <code>$\ket{0} \otimes \ket{1}$</code> or in short just <code>$\ket{0}\ket{1}$</code>. So the four different combinations of a two bit system are <code>$\ket{00}$</code>, <code>$\ket{01}$</code>, <code>$\ket{10}$</code>and <code>$\ket{11}$</code>, or <code>$\ket{0}$</code>, <code>$\ket{1}$</code>, <code>$\ket{2}$</code>, <code>$\ket{3}$</code></p>
+<h4 id="logic-gates-as-linear-operators">Logic Gates as linear operators</h4>
+<ul>
+<li>NOT Gate: <code>$\begin{pmatrix} 0 &amp; 1 \cr 1 &amp; 0 \end{pmatrix}$</code></li>
+<li>AND Gate: <code>$\begin{pmatrix} 1 &amp; 1 &amp; 1 &amp; 0 \cr 0 &amp; 0  &amp; 0 &amp; 1\end{pmatrix}$</code>, notice the AND Operator will reduce the dimension of output (2 inputs, 1 output), this means it is irreversible, information will be &ldquo;lost&rdquo;, or better it will be dissipated as heat for example</li>
+<li>NAND Gate: <code>$ N = \begin{pmatrix} 0 &amp; 0 &amp; 0 &amp; 1 \cr 1 &amp; 1  &amp; 1 &amp; 0\end{pmatrix}$</code></li>
+</ul>
+<p>This gates can now be used to perform computation using the rules of matrix multiplication together with the tensor product.</p>
+<p>Compute XOR using NAND Gates:</p>
+<p>$$N((N((N \cdot ab) \otimes b)) \otimes (N(N \cdot ab) \otimes b))$$</p>
+<p>Where a and b are arbitrary bits (represented using a two dimensional vector) and ab is the tensor product of the two bits, resulting in a four dimensional vector</p>
+<p>This is essential just another notation as to write the combination of NAND Gates using boolean algebra.</p>
+<ul>
+<li>TODO: insert boolean algebra formula for NAND Gate</li>
+</ul>
+<p>The XOR Gate is a essential building block for the full adder.</p>
+<ul>
+<li>TODO: insert formula for full adder, insert mathematica code example for computing</li>
+</ul>
+<h3 id="transition-to-quantum-computing">Transition to Quantum Computing</h3>
+<p>In Quantum Computing not only the states 0 and 1 are possible, but also all infinte combinations between them. (superposition)
+A Qubit can be written with two probabilites, and with the corresponding basis vectors:
+$$\ket{\psi} = \left(\begin{array}{c} p_0 \cr p_1 \end{array}\right) = p_0 \ket{0} + p_1 \ket{1}$$
+Note that <code>$p_0$</code> and <code>$p_1$</code> are complex numbers and the probabilites need to be normalized to one (vector with length 1).
+So geometrically all possible superposition are on a circle.
+Also note that <code>$p_0$</code> and <code>$p_1$</code> are in fact not probabilites, but probability amplitudes (so the modulus square gives the probability). Also they contain more information than just probabilites, thats why there are imaginary numbers.</p>
+<p>=&gt; phase kickback</p>
+<figure><img src="/superposition.png" width="50%"/>
+</figure>
+
+<h4 id="bloch-sphere">Bloch Sphere</h4>
+<p>Another way to view a qubit is the Bloch Sphere.
+For the Bloch Sphere it is important to note when measuring, the wave function collapses and the probability to measure the state i is <code>$|p_i|^2$</code>. (this is a fundamental statement of the copenhagen interpretation)
+Futhermore the sum of all probabilites must sum to 1 <code>$|p_0|^2 +|p_1|^2 = 1$</code>
+These two facts allow us to eliminate two variables (global phase and normalization), so a Qubit can be described using only two variables.</p>
+<p>$$ \ket{\psi} = \cos{\frac{\theta}{2}}\ket{0} + e^{i\phi}\sin{\frac{\theta}{2}\ket{1}} $$</p>
+<p>Now in fact one can see that only <code>$\theta$</code> describes the probaility to measure a state, but <code>$\phi$</code> (the relative phase) is still very important and makes a physcial difference, when performing operations using gates or multiple Qubits.</p>
+<p>So all we did is to show that with a suitable change of coordinates (Hopf coordinates), we can clearly see the actual degrees of freedom of a Qubit.</p>
+<p>$$p_0 = \cos{\frac{\theta}{2}} $$
+$$ p_1 = e^{i\phi}\sin{\frac{\theta}{2}} $$</p>
+<h4 id="example">Example</h4>
+<p>Consider the two states:</p>
+<p>$$\ket{+} = \frac{1}{\sqrt{2}}\left(\begin{array}{c} 1 \cr 1 \end{array}\right) $$
+$$\ket{-} = \frac{1}{\sqrt{2}}\left(\begin{array}{c} 1 \cr -1 \end{array}\right) $$</p>
+<p>These two states have the same probability to measure state <code>$\ket{0}$</code> or state <code>$\ket{1}$</code> (50%). But they differ in the relative phase. The representation on the bloch sphere is:</p>
+<p>$$\ket{+} = \cos{\frac{\pi}{4}}\ket{0} + \sin{\frac{\pi}{4}\ket{1}} $$
+$$\ket{-} = \cos{\frac{\pi}{4}}\ket{0} - \sin{\frac{\pi}{4}\ket{1}} $$</p>
+<p>To make the relative phase more clear we can write</p>
+<p>$$\ket{+} = \cos{\frac{\pi}{4}}\ket{0} + e^{i0}\sin{\frac{\pi}{4}\ket{1}} $$
+$$\ket{-} = \cos{\frac{\pi}{4}}\ket{0} + e^{i\pi}\sin{\frac{\pi}{4}\ket{1}} $$
+(since <code>$e^{i\pi} = -1$</code>)</p>
+<p>Now it is clear that the two states have same probabilites (as you can see with <code>$\theta$</code>), but different relative phases, in fact they are completly different direction. So when applying the hadarmard gate, these two states have different results. Also thats the reason why applying the hadarmard gate two times in a row cancel itself out. (phase interference)</p>
+<p>Another example state:</p>
+<p>$$\ket{\psi} = \frac{1}{\sqrt{2}}\left(\begin{array}{c} 1 \cr i \end{array}\right) $$</p>
+<p>Again, if we would measure the state, it has equal probabilites as the states above, but differs in the relative phase.</p>
+<p>$$\ket{\psi_1} = \cos{\frac{\pi}{4}}\ket{0} + e^{i\frac{\pi}{2}}\sin{\frac{\pi}{4}\ket{1}} $$</p>
+<p>(<code>$e^{i\frac{\pi}{2}} = i$</code>)</p>
+<p>Doing something like
+$$\ket{\psi} = \frac{1}{\sqrt{2}}\left(\begin{array}{c} i \cr i \end{array}\right) $$</p>
+<p>doesnt change anything, since now we changed the global phase.</p>
+<p>$$\ket{\psi} = \left(\begin{array}{c} \frac{1}{\sqrt{2}} \cr \frac{1}{\sqrt{4}} + \frac{1}{\sqrt{4}}i \end{array}\right) $$</p>
+<p>TODO:</p>
+<ul>
+<li>only lower half needed to reach all possible (physical important&hellip;) states?</li>
+<li>how to compute phi in general case?
+$$a + bi$$
+$$\phi = \arcsin(\frac{b}{\sin{\arcsin{\sqrt{a^2+b^2}}}})$$</li>
+<li>measure in a different base to show the phase difference of first example?</li>
+</ul>
+<h4 id="measuring">Measuring</h4>
+<ul>
+<li>measure with respect to z axis (so 0 or 1)</li>
+<li>measure with respect to x axis (so + or -)
+Information could be encoded in both ways, but not both at the same time
+qiskit only allows measuring in the z basis (so rotate qubits instead of measuring device)</li>
+</ul>
+<p>=&gt; heisenberg uncertainty principle
+Z^2 + X^2 &lt;= 1</p>
+<h4 id="two-qubit-system">two Qubit System</h4>
+<p>A two Qubit system is the tensor product between two Qubits, so in general
+$$\left(\begin{array}{c} p_0 \cr p_1 \end{array}\right) \otimes \left(\begin{array}{c} l_0 \cr l_1 \end{array}\right) = \left(\begin{array}{c} p_0l_0 \cr p_0l_1 \cr p_1l_0 \cr p_1l_1 \end{array}\right)$$</p>
+<p>Now there can be a state of a two-Qubit system, that can not be decomposed as a tensor product of two seperate Qubits. This state is said to be entagled. In classical computation no entaglement is possible.</p>
+<ul>
+<li>TODO: fix image, example for entaglement</li>
+<li>bloch sphere for two qubits?</li>
+</ul>
+<p>$$ \left| \phi^+ \right&gt; = \frac{1}{\sqrt{2}} (\left| 00 \right&gt; + \left| 11 \right&gt;) = \left(\begin{array}{c} \frac{1}{\sqrt{2}} \cr 0 \cr 0 \cr \frac{1}{\sqrt{2}} \end{array}\right) $$
+=&gt; one of four bell states (maximum quantum entaglement, cannot be explained with classical theories, localism or realism has to be given up)</p>
+<ul>
+<li>Reason for only reversible Quantum Gates? Because entagled state information loss would change things?
+What happens if the NAND Gate is applied to the bell state?</li>
+</ul>
+<p>$$\begin{pmatrix} 0 &amp; 0 &amp; 0 &amp; 1 \cr 1 &amp; 1  &amp; 1 &amp; 0\end{pmatrix} \left(\begin{array}{c} \frac{1}{\sqrt{2}} \cr 0 \cr 0 \cr \frac{1}{\sqrt{2}} \end{array}\right) = \left(\begin{array}{c} \frac{1}{\sqrt{2}} \cr \frac{1}{\sqrt{2}}  \end{array}\right) $$</p>
+<h3 id="phase-kickback">phase kickback</h3>
+<p>Phase kickback can occur in controlled two-qubit gates, and describes the kickback of the eigenvalue to the control qubit.</p>
+<p>If the target qubit is in an eigenstate of the gate and the control qubit is in a superposition (so not only the global phase will be changed), the eigenvalue is kicked back to the control qubit (axiom of tensor product).</p>
+<p>Consider a CNOT gate.
+What is a CNOT Gate doing? &ldquo;standard&rdquo; representation is only an arbitrary choice, what is it actually doing? (no idea..) &ldquo;Control&rdquo; and &ldquo;Target&rdquo; is not really meaningfull</p>
+<ul>
+<li>everything is described in standard basis</li>
+</ul>
+<p>$$CNOT = \begin{pmatrix} 1 &amp; 0 &amp; 0 &amp; 0 \cr 0 &amp; 1 &amp; 0 &amp; 0 \cr  0 &amp; 0 &amp; 0 &amp; 1 \cr 0 &amp; 0 &amp; 1 &amp; 0\end{pmatrix} $$ (check little endian vs big endian, which bit is control/target?)
+$$CNOT \ket{1}\ket{0} = \ket{1}\ket{1}$$
+$$CNOT \ket{+}\ket{-} = \ket{-}\ket{-}$$</p>
+<p>The CNOT gate flippes the &ldquo;target&rdquo; bit in the standard basis, but flips the &ldquo;control&rdquo; bit in the hadamard basis.</p>
+<p>When the controll qubit is in a superposition and the target qubit is the eigenstate of the controlled-gate, then phase kickback takes place.</p>
+<p>So lets assume <code>$\ket{\psi}$</code> is a eigenstate of an arbitrary controlled-gate (by 1) (unitary matrix) <code>$U$</code> and the controll bit is in an arbitrary superposition.</p>
+<p>$$ U ((p_0 \ket{0} + p_1 \ket{1})\ket{\psi}) = U (p_0 \ket{0}\ket{\psi} + p_1 \ket{1}\ket{\psi}) = (p_0 U\ket{0}\ket{\psi} + p_1 U\ket{1}\ket{\psi}) = (p_0 \ket{0}\ket{\psi} + p_1 e^{i\phi}\ket{1}\ket{\psi}) =  (p_0 \ket{0} + p_1 e^{i\phi} \ket{1})\ket{\psi}$$</p>
+<h4 id="deutschs-algorithm">Deutsch&rsquo;s Algorithm</h4>
+<ul>
+<li>
+<p>represent non-reversible function reversible</p>
+</li>
+<li>
+<p>use of ancilla bits (XORed together in the end)</p>
+</li>
+<li>
+<p>the idea: uses phase kickback to kick back eigenvalue of target qubit to control qubit (since target qubit is in an eigenstate of Uf)</p>
+</li>
+<li>
+<p>the target qubit is in eigenstate <code>$\ket{-}$</code> of <code>$U_f$</code> with eigenvalue <code>$-1^{f(x)}$</code>.</p>
+</li>
+<li>
+<p>eigenvalue is encoded in phase of controll qubit using phase kickback</p>
+</li>
+<li>
+<p>final hadamard gate collapses phase to basis states <code>$f(0) XOR f(1)$</code></p>
+</li>
+</ul>
+<p>Three options for <code>$U_f$</code>, <code>$U_f = CNOT$</code> (balanced), <code>$U_f = I$</code> (f(x) = 0) or <code>$U_f = \begin{pmatrix} 0 &amp; 1 &amp; 0 &amp; 0 \cr 1 &amp; 0 &amp; 0 &amp; 0 \cr  0 &amp; 0 &amp; 0 &amp; 1 \cr 0 &amp; 0 &amp; 1 &amp; 0\end{pmatrix}$</code> (f(x) = 1)</p>
+<h4 id="deutschs-joszas-algorithm">Deutsch&rsquo;s Josza&rsquo;s Algorithm</h4>
+<ul>
+<li>generalization of Deutsch Algorithm to higher dimensions.</li>
+<li>f now accepts arbitrary inputs of 0s and 1s</li>
+<li>exponential speedup compared to classical algorithm</li>
+</ul>
+<h4 id="quantum-advantage">Quantum Advantage</h4>
+<p>simulation of quantum computers</p>
+<p>what is the power of quantum computing?
+=&gt; entaglement? interference?</p>
+<p>Gottesman–Knill Theorem
+=&gt; shows what operations you need to use full potential of quantum computing</p>
+<p>its probably not difficult to design a quantum algorithm, but to let it be faster than a classical (need to use special quantum effects, but how?)</p>
+<p>everett many worlds interpretation
+=&gt; quantum parallelism by using computing power from alternate realities
+=&gt; quatum computing speedup prove for this theory?</p>
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section id="comments">
+    <div class="py-3 content">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-sm-12 col-lg-8">
+                    <div class="comments">
+                        <script src="https://utteranc.es/client.js" repo=""
+                            issue-term="pathname" label="comment" theme="github-light" crossorigin="anonymous" async>
+                            </script>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+    
+
+
+    
+
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/highlight.min.js" integrity="sha512-TDKKr+IvoqZnPzc3l35hdjpHD0m+b2EC2SrLEgKDRWpxf2rFCxemkgvJ5kfU48ip+Y+m2XVKyOCD85ybtlZDmw==" crossorigin="anonymous"></script>
+        
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/r.min.js" defer></script>
+        
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/python.min.js" defer></script>
+        
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/stan.min.js" defer></script>
+        
+        <script>
+            window.addEventListener('load', function() {
+                hljs.initHighlighting();
+            }, true);
+        </script>
+    
+
+    
+
+    
+    
+        
+<script src="/js/math-code.js"></script>
+<script async src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+
+    
+</body>
+
+</html>

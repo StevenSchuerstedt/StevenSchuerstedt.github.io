@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title> StevieTrace - Computer Graphics and Path Tracing - Hugo Themes </title>
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="referrer" content="no-referrer">
+    <meta name="description" content="" />
+    <meta property="og:site_name" content="Hugo Themes" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://stevenschuerstedt.github.io/post/computer-graphics-and-path-tracing/" />
+    <meta property="og:title" content="StevieTrace - Computer Graphics and Path Tracing" />
+    <meta property="og:image" content="https://stevenschuerstedt.github.io/" />
+    <meta property="og:description" content="" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    
+    <meta name="twitter:title" content="StevieTrace - Computer Graphics and Path Tracing" />
+    <meta name="twitter:description" content="" />
+    <meta name="twitter:image" content="https://stevenschuerstedt.github.io/" />
+
+    <link rel="canonical" href="https://stevenschuerstedt.github.io/post/computer-graphics-and-path-tracing/">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha512-MoRNloxbStBcD8z3M/2BmnT+rg4IsMxPkXaGh2zD6LGNNFE80W3onsAhRcMAMrSoyWL9xD7Ert0men7vR8LUZg==" crossorigin="anonymous" />
+
+    <link rel="stylesheet" href="https://stevenschuerstedt.github.io/css/custom.css" />
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/github-gist.min.css" integrity="sha512-od7JLoOTxM8w/HSKGzP9Kexc20K9p/M2zxSWsd7H1e4Ctf+8SQFtCWEZnW5u6ul5ehSECa5QmOk9ju2nQMmlVA==" crossorigin="anonymous" />
+    
+
+    
+
+    <link rel="shortcut icon"
+        href="https://stevenschuerstedt.github.io/images/favicon.png">
+
+    
+    <link href="https://stevenschuerstedt.github.io/index.xml" rel="alternate" type="application/rss+xml" title="Hugo Themes" />
+    
+</head>
+
+<body>
+    
+    <div class="mt-xl header">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-auto">
+                <a href="https://stevenschuerstedt.github.io/">
+                    <h1 class="name">Steven Schürstedt</h1>
+					
+                </a>
+            </div>
+			<img src="https://stevenschuerstedt.github.io//ich.jpg" width="100" height="100" alt="Selfhtml">
+        </div>
+
+        <div class="row justify-content-center">
+            <ul class="nav nav-primary">
+                
+                <li class="nav-item">
+                    <a class="nav-link" href="/">
+                        
+                        Home
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link" href="/sketches/">
+                        
+                        Sketches
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link" href="/about/">
+                        
+                        About
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
+    </div>
+</div>
+
+    <div class="content">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-sm-12 col-lg-8">
+                    <h1 class="mx-0 mx-md-4">StevieTrace - Computer Graphics and Path Tracing</h1>
+                    <div class="markdown">
+                        
+    <p>In computer graphics there exist two big categories that use a different approach to render an image to the display. These are online- and offline or realtime- and no realtime rendering. In computer games, or any other interactive media the computer needs to respond to the input of the user in a short amount of time to give the illusion of a continous media experience. Frames need to be rendered at about 60 times per second, so the time spent for one frame is very little. On the other hand for non interactive media, like movies or pictures, the time spent to calculate one frame is not restricted. This gives a different approach for rendering images. In realtime rendering, all rendering happens on the graphics card, the GPU. The GPU is a highly parallelized computer, that can run a lot of programs at once. This is used to calculate the color for every pixel on the monitor simultaneously. In order to program on the GPU there exists several API’s (like OpenGL, Vulkan, DirectX..) to communicate with the GPU. These API’s offer the ability to write shaders, which are programs that are executed on the GPU (see <a href="https://steven.schuerstedt.com/?page_id=343">StevieJump</a>, for an application with OpenGL).</p>
+<p>For offline rendering a algorithm called raytracing is used. This algorithm tries to mimic the way light waves/particles behave when the illuminate a scene. A light ray gets projected into a scene from a lightsource and gets reflected, absorbed or scattered by interacting with surfaces or volume media. The basis for offline rendering are the physics laws that describe the behaviour of light (like Maxwell’s formulas). Many popular ray tracer run on the CPU. The difference between offline- and online rendering is getting smaller as time progresses. The computing power of modern computers is advancing, so the complicated algorithms of offline rendering become more and more feasible to use in real time (see real time ray tracing).</p>
+<h2 id="path-tracing-and-stevietracer">Path tracing and StevieTracer</h2>
+<p>The basis equation for offline rendering is the rendering equation (the brackets behind the equation denote the unit)</p>
+<p><img loading="lazy" src="https://steven.schuerstedt.com/wp-content/ql-cache/quicklatex.com-3076ab2f6315d49a9b615bfeb01d8a66_l3.png" class="ql-img-inline-formula quicklatex-auto-format" alt="&#76;&#40;&#92;&#116;&#101;&#120;&#116;&#98;&#102;&#123;&#120;&#125;&#44;&#32;&#92;&#111;&#109;&#101;&#103;&#97;&#41;&#32;&#61;&#32;&#76;&#95;&#101;&#40;&#92;&#116;&#101;&#120;&#116;&#98;&#102;&#123;&#120;&#125;&#44;&#32;&#92;&#111;&#109;&#101;&#103;&#97;&#41;&#32;&#43;&#32;&#92;&#105;&#110;&#116;&#95;&#123;&#83;&#94;&#50;&#125;&#32;&#92;&#102;&#95;&#114;&#40;&#92;&#111;&#109;&#101;&#103;&#97;&#44;&#32;&#92;&#116;&#101;&#120;&#116;&#98;&#102;&#123;&#120;&#125;&#44;&#32;&#92;&#111;&#109;&#101;&#103;&#97;&#94;&#92;&#112;&#114;&#105;&#109;&#101;&#41;&#76;&#40;&#92;&#116;&#101;&#120;&#116;&#98;&#102;&#123;&#120;&#125;&#44;&#32;&#92;&#111;&#109;&#101;&#103;&#97;&#94;&#92;&#112;&#114;&#105;&#109;&#101;&#41;&#32;&#92;&#118;&#101;&#114;&#116;&#32;&#92;&#116;&#101;&#120;&#116;&#98;&#102;&#123;&#110;&#125;&#40;&#92;&#116;&#101;&#120;&#116;&#98;&#102;&#123;&#120;&#125;&#41;&#32;&#92;&#99;&#100;&#111;&#116;&#32;&#92;&#111;&#109;&#101;&#103;&#97;&#94;&#92;&#112;&#114;&#105;&#109;&#101;&#32;&#92;&#118;&#101;&#114;&#116;&#32;&#100;&#92;&#111;&#109;&#101;&#103;&#97;&#94;&#92;&#112;&#114;&#105;&#109;&#101;" title="Rendered by QuickLaTeX.com" height="20" width="429" style="vertical-align: -6px;" /><img loading="lazy" src="https://steven.schuerstedt.com/wp-content/ql-cache/quicklatex.com-0f3af2534b71517be958402fc1e5b578_l3.png" class="ql-img-inline-formula quicklatex-auto-format" alt="&#91;&#92;&#102;&#114;&#97;&#99;&#123;&#87;&#125;&#123;&#109;&#94;&#50;&#115;&#114;&#125;&#93;" title="Rendered by QuickLaTeX.com" height="23" width="42" style="vertical-align: -7px;" /></p>
+<p>This equation describes the behaviour of light on surface in a vacuum. The term<img loading="lazy" src="https://steven.schuerstedt.com/wp-content/ql-cache/quicklatex.com-fdd7c23e32c6e708900c570a7e10a497_l3.png" class="ql-img-inline-formula quicklatex-auto-format" alt="&#76;&#40;&#92;&#116;&#101;&#120;&#116;&#98;&#102;&#123;&#120;&#125;&#44;&#32;&#92;&#111;&#109;&#101;&#103;&#97;&#41;" title="Rendered by QuickLaTeX.com" height="19" width="55" style="vertical-align: -5px;" /> describes the radiance flowing from a point<img loading="lazy" src="https://steven.schuerstedt.com/wp-content/ql-cache/quicklatex.com-27a2f7ab513a764b16fc08c9df21cf7a_l3.png" class="ql-img-inline-formula quicklatex-auto-format" alt="&#92;&#116;&#101;&#120;&#116;&#98;&#102;&#123;&#120;&#125;" title="Rendered by QuickLaTeX.com" height="8" width="11" style="vertical-align: 0px;" /> in the direction<img loading="lazy" src="https://steven.schuerstedt.com/wp-content/ql-cache/quicklatex.com-707fcec15e450815730425a6607a1858_l3.png" class="ql-img-inline-formula quicklatex-auto-format" alt="&#92;&#111;&#109;&#101;&#103;&#97;" title="Rendered by QuickLaTeX.com" height="8" width="11" style="vertical-align: 0px;" /> . This radiance is a combination of the direct light, being emitted from the point itself, and the indirect radiance from all other directions. Radiance is power per square meter per solid angle.</p>
+<p>Solving this equation directly is very difficult because we cannot compute the integral and there is also a recursion inside the equation, because the term<img loading="lazy" src="https://steven.schuerstedt.com/wp-content/ql-cache/quicklatex.com-fdd7c23e32c6e708900c570a7e10a497_l3.png" class="ql-img-inline-formula quicklatex-auto-format" alt="&#76;&#40;&#92;&#116;&#101;&#120;&#116;&#98;&#102;&#123;&#120;&#125;&#44;&#32;&#92;&#111;&#109;&#101;&#103;&#97;&#41;" title="Rendered by QuickLaTeX.com" height="19" width="55" style="vertical-align: -5px;" /> appears on bot sides. For integration we use a technique called monte-carlo integration. For the recursion we use the ray tracing algorithm.</p>
+<p>A monte-carlo estimator for some generic function<img loading="lazy" src="https://steven.schuerstedt.com/wp-content/ql-cache/quicklatex.com-a7ee323bc5a3f73ad5e066b13bed5504_l3.png" class="ql-img-inline-formula quicklatex-auto-format" alt="&#102;&#40;&#120;&#41;" title="Rendered by QuickLaTeX.com" height="19" width="34" style="vertical-align: -5px;" /> is given by</p>
+<p><img loading="lazy" src="https://steven.schuerstedt.com/wp-content/ql-cache/quicklatex.com-6575370ca5e05080c9170bbc5678a04a_l3.png" class="ql-img-inline-formula quicklatex-auto-format" alt="&#92;&#105;&#110;&#116;&#32;&#102;&#40;&#120;&#41;&#100;&#120;&#32;&#61;&#32;&#92;&#102;&#114;&#97;&#99;&#123;&#49;&#125;&#123;&#78;&#125;&#92;&#115;&#117;&#109;&#95;&#123;&#105;&#61;&#49;&#125;&#94;&#123;&#78;&#125;&#92;&#102;&#114;&#97;&#99;&#123;&#102;&#40;&#88;&#95;&#105;&#41;&#125;&#123;&#112;&#40;&#88;&#95;&#105;&#41;&#125;" title="Rendered by QuickLaTeX.com" height="29" width="194" style="vertical-align: -10px;" /></p>
+<p>To evaluate the integral we evaluate the function at random points<img loading="lazy" src="https://steven.schuerstedt.com/wp-content/ql-cache/quicklatex.com-998dba373bb08119e12a646c873be88c_l3.png" class="ql-img-inline-formula quicklatex-auto-format" alt="&#88;&#95;&#105;" title="Rendered by QuickLaTeX.com" height="15" width="20" style="vertical-align: -3px;" /> , that are distributed according to the probability density function<img loading="lazy" src="https://steven.schuerstedt.com/wp-content/ql-cache/quicklatex.com-a56ad4bfa5995a614f176b4f5d91b2a1_l3.png" class="ql-img-inline-formula quicklatex-auto-format" alt="&#112;&#40;&#88;&#95;&#105;&#41;" title="Rendered by QuickLaTeX.com" height="19" width="43" style="vertical-align: -5px;" /> (pdf). This pdf can be everything we want, since the function actually has no propabilites relate to it, but in order to have a fast convergence to the correct result it is best to choose the pdf similar to<img loading="lazy" src="https://steven.schuerstedt.com/wp-content/ql-cache/quicklatex.com-a7ee323bc5a3f73ad5e066b13bed5504_l3.png" class="ql-img-inline-formula quicklatex-auto-format" alt="&#102;&#40;&#120;&#41;" title="Rendered by QuickLaTeX.com" height="19" width="34" style="vertical-align: -5px;" /> .</p>
+<p>In order to use the rendering equation for actual images, we need to relate it to the final pixel color of a monitor. This is done by using a Neumann-Reihe. If the rendering equation is written in operator notation one can see that it is actually a geometric series. This can be written as an infinite sum and finally an integral over the pathspace, a space that includes all possible combinations of paths. Also we switch the integration domain from directions to surfaces, to be able to sample points on lightsources.</p>
+<p><img loading="lazy" src="https://steven.schuerstedt.com/wp-content/ql-cache/quicklatex.com-4f67ab8101e7de320adcdc737f38dd48_l3.png" class="ql-img-inline-formula quicklatex-auto-format" alt="&#73;&#32;&#61;&#32;&#92;&#105;&#110;&#116;&#95;&#80;&#32;&#102;&#40;&#88;&#41;&#100;&#88;" title="Rendered by QuickLaTeX.com" height="20" width="121" style="vertical-align: -6px;" /><img loading="lazy" src="https://steven.schuerstedt.com/wp-content/ql-cache/quicklatex.com-90b0c2bd56aedad2c43738fafd5af044_l3.png" class="ql-img-inline-formula quicklatex-auto-format" alt="&#91;&#87;&#93;" title="Rendered by QuickLaTeX.com" height="18" width="25" style="vertical-align: -5px;" /></p>
+<p>This function sums up the contribution of all possible paths weighted with the measurement contribution function (MCF). The MCF calculates the contribution of a complete path from lightsource to the camera, along<img loading="lazy" src="https://steven.schuerstedt.com/wp-content/ql-cache/quicklatex.com-3422b6bb5c160593658b7c39425d9880_l3.png" class="ql-img-inline-formula quicklatex-auto-format" alt="&#107;" title="Rendered by QuickLaTeX.com" height="12" width="9" style="vertical-align: 0px;" /> vertices.</p>
+<p><img loading="lazy" src="https://steven.schuerstedt.com/wp-content/ql-cache/quicklatex.com-7284b36d1d550e3d266f199c26ba62b0_l3.png" class="ql-img-inline-formula quicklatex-auto-format" alt="&#102;&#40;&#88;&#41;&#32;&#61;&#32;&#76;&#95;&#101;&#32;&#71;&#40;&#120;&#95;&#123;&#107;&#45;&#49;&#125;&#44;&#32;&#120;&#95;&#107;&#41;&#32;&#40;&#92;&#112;&#114;&#111;&#100;&#95;&#123;&#105;&#61;&#50;&#125;&#94;&#123;&#107;&#45;&#49;&#125;&#102;&#95;&#114;&#40;&#120;&#95;&#105;&#41;&#71;&#40;&#120;&#95;&#123;&#105;&#45;&#49;&#125;&#44;&#120;&#95;&#105;&#41;&#41;&#87;" title="Rendered by QuickLaTeX.com" height="22" width="382" style="vertical-align: -5px;" /></p>
+<p><img loading="lazy" src="https://steven.schuerstedt.com/wp-content/ql-cache/quicklatex.com-30a79c32f18567063fe44716929e7ced_l3.png" class="ql-img-inline-formula quicklatex-auto-format" alt="&#71;" title="Rendered by QuickLaTeX.com" height="12" width="14" style="vertical-align: 0px;" /> is the geometry term and relates solid angle to vertex area. It is needed to switch the integration domain from directions to surfaces and is the jacobian of that coordinate transformation.</p>
+<p>To use monte carlo integration on the path space integral we need a way to sample paths and determine the pdf with it. One approach is to sample a direction according to the BRDF, so we choose a new direction that would give a high contribution according to the BRDF. Because this pdf would then be in solid angle measure, we also need to convert it with the geometry term to vertex area measure. Effectively the geometry term will cancel out in the estimator. In order to guarantee to hit the lightsource we use an algorithm called next event estimation (NEE). After we have an intersection with scene geometry, we will automatically sample a point on the lightsource and try to build a connection. Therefore we need to evaluate the visibility function, to check if the sampled point on the light source is actually visible from the vertex.</p>
+<p>Finally our monte carlo estimate of the pixel intensity is</p>
+<p><img loading="lazy" src="https://steven.schuerstedt.com/wp-content/ql-cache/quicklatex.com-b89765fe78353f7b1bab60733858236a_l3.png" class="ql-img-inline-formula quicklatex-auto-format" alt="&#92;&#102;&#114;&#97;&#99;&#123;&#49;&#125;&#123;&#78;&#125;&#92;&#115;&#117;&#109;&#95;&#123;&#105;&#61;&#49;&#125;&#94;&#123;&#78;&#125;&#92;&#102;&#114;&#97;&#99;&#123;&#76;&#95;&#101;&#40;&#120;&#95;&#107;&#41;&#32;&#71;&#40;&#120;&#95;&#123;&#107;&#45;&#49;&#125;&#44;&#32;&#120;&#95;&#107;&#41;&#32;&#92;&#112;&#114;&#111;&#100;&#95;&#123;&#105;&#61;&#50;&#125;&#94;&#123;&#107;&#45;&#49;&#125;&#102;&#95;&#114;&#40;&#120;&#95;&#105;&#41;&#125;&#123;&#112;&#40;&#120;&#95;&#107;&#41;&#32;&#92;&#112;&#114;&#111;&#100;&#95;&#123;&#105;&#61;&#50;&#125;&#94;&#123;&#107;&#45;&#49;&#125;&#32;&#112;&#40;&#92;&#111;&#109;&#101;&#103;&#97;&#95;&#105;&#41;&#125;" title="Rendered by QuickLaTeX.com" height="36" width="254" style="vertical-align: -13px;" /></p>
+<p>This are roughly the basic mathematics and thoughts that go into writing a path tracer. I tried to write a simple as possible version of a path tracer, called stevieTracer. It is based on “ray tracing in one weekend” by Peter Shirley and is upgraded to support all the things described above.</p>
+<h2 id="stevietracer">StevieTracer</h2>
+<p>StevieTracer is a simple path tracer I wrote after a university course about photorealistic rendering.</p>
+<p>Overview:</p>
+<ul>
+<li>StevieTracer uses the ppm image format, because it is so easy</li>
+<li>only supports rendering of spheres, but by using very big spheres the illusion of a wall can be achieved</li>
+<li>supports a perfectly specular and a perfectly diffuse material</li>
+<li>next event estimation</li>
+<li>Russian roulette to terminate paths</li>
+</ul>
+<p><strong>lambertian brdf:</strong></p>
+<p>The lambertian brdf is a perfectly diffuse brdf, this means light is scattered in all directions equally.</p>
+<p><img loading="lazy" src="https://steven.schuerstedt.com/wp-content/ql-cache/quicklatex.com-1bc559ee1ffa68aa11514af1598871c4_l3.png" class="ql-img-inline-formula quicklatex-auto-format" alt="&#102;&#95;&#114;&#40;&#92;&#116;&#101;&#120;&#116;&#98;&#102;&#123;&#120;&#125;&#41;&#32;&#61;&#32;&#92;&#102;&#114;&#97;&#99;&#123;&#92;&#114;&#104;&#111;&#125;&#123;&#92;&#112;&#105;&#125;" title="Rendered by QuickLaTeX.com" height="20" width="75" style="vertical-align: -6px;" /></p>
+<p>Note the brdf does not depend on any direction.<img loading="lazy" src="https://steven.schuerstedt.com/wp-content/ql-cache/quicklatex.com-da039068127cf2ec5fc05123d4d3546f_l3.png" class="ql-img-inline-formula quicklatex-auto-format" alt="&#92;&#114;&#104;&#111;" title="Rendered by QuickLaTeX.com" height="12" width="9" style="vertical-align: -4px;" /> is the albedo of the surfacepoint<img loading="lazy" src="https://steven.schuerstedt.com/wp-content/ql-cache/quicklatex.com-27a2f7ab513a764b16fc08c9df21cf7a_l3.png" class="ql-img-inline-formula quicklatex-auto-format" alt="&#92;&#116;&#101;&#120;&#116;&#98;&#102;&#123;&#120;&#125;" title="Rendered by QuickLaTeX.com" height="8" width="11" style="vertical-align: 0px;" /> (the color of the object) and<img loading="lazy" src="https://steven.schuerstedt.com/wp-content/ql-cache/quicklatex.com-26d6788550ffd50fe94542bb3e8ee615_l3.png" class="ql-img-inline-formula quicklatex-auto-format" alt="&#92;&#112;&#105;" title="Rendered by QuickLaTeX.com" height="8" width="11" style="vertical-align: 0px;" /> is needed for energy conservation. Because the probability of every direction is the same, the pdf for this brdf simply is the probability of sampling a direction in the sphere.</p>
+<p><img loading="lazy" src="https://steven.schuerstedt.com/wp-content/ql-cache/quicklatex.com-e10e2f7502ed994d46b3b8386764ba44_l3.png" class="ql-img-inline-formula quicklatex-auto-format" alt="&#112;&#32;&#61;&#32;&#92;&#102;&#114;&#97;&#99;&#123;&#49;&#125;&#123;&#52;&#92;&#112;&#105;&#125;" title="Rendered by QuickLaTeX.com" height="22" width="51" style="vertical-align: -6px;" /></p>
+<p>In this case it would be better to sample the cosine term in the rendering equation and change the sampling procedure and the pdf accordingly.</p>
+<p><strong>metal brdf:</strong></p>
+<p>The metal brdf is a perfectly specular material, like a really shiny metal or a mirror. This means for every incoming direction, there is only one outgoing direction to transport energy. Mathematically this is achieved by using a delta function for the brdf, so in the rendering equation the integral only gets evaluated for one single direction. In code this direction can only be sampled, so the brdf should never be evaluated for any other direction. <figure class="wp-block-image size-large"></p>
+<p><img loading="lazy" width="500" height="281" src="https://steven.schuerstedt.com/wp-content/uploads/2021/05/render2.png" alt="" class="wp-image-1093" srcset="https://steven.schuerstedt.com/wp-content/uploads/2021/05/render2.png 500w, https://steven.schuerstedt.com/wp-content/uploads/2021/05/render2-300x169.png 300w" sizes="(max-width: 500px) 100vw, 500px" /> </figure></p>
+<h2 id="volume-rendering">Volume Rendering</h2>
+<p>In volume rendering a vacuum is no longer assumed, and there exists different processes inside a medium, like absorption or scattering, that affect photons. These things are modeled stochastically with different emission, absorption and scattering coefficients.</p>
+<p>The basis equation for volume rendering is the volume rendering equation. It is derived by integrating the radiance transfer equation and using surfaces as a boundary condition.</p>
+<p><img loading="lazy" src="https://steven.schuerstedt.com/wp-content/ql-cache/quicklatex.com-00f32823ba9c8bc2042c265cf2e0e7b8_l3.png" class="ql-img-inline-formula quicklatex-auto-format" alt="&#76;&#40;&#92;&#116;&#101;&#120;&#116;&#98;&#102;&#123;&#120;&#125;&#44;&#92;&#111;&#109;&#101;&#103;&#97;&#41;&#32;&#61;&#32;&#92;&#105;&#110;&#116;&#95;&#123;&#48;&#125;&#94;&#123;&#122;&#125;&#32;&#84;&#40;&#92;&#116;&#101;&#120;&#116;&#98;&#102;&#123;&#120;&#125;&#44;&#92;&#116;&#101;&#120;&#116;&#98;&#102;&#123;&#121;&#125;&#41;&#32;&#92;&#115;&#105;&#103;&#109;&#97;&#40;&#92;&#116;&#101;&#120;&#116;&#98;&#102;&#123;&#121;&#125;&#41;&#76;&#94;&#109;&#40;&#92;&#116;&#101;&#120;&#116;&#98;&#102;&#123;&#121;&#125;&#44;&#92;&#111;&#109;&#101;&#103;&#97;&#41;&#100;&#92;&#116;&#101;&#120;&#116;&#98;&#102;&#123;&#121;&#125;&#43;&#84;&#40;&#92;&#116;&#101;&#120;&#116;&#98;&#102;&#123;&#120;&#125;&#44;&#92;&#116;&#101;&#120;&#116;&#98;&#102;&#123;&#122;&#125;&#41;&#76;&#94;&#83;&#40;&#92;&#116;&#101;&#120;&#116;&#98;&#102;&#123;&#122;&#125;&#44;&#92;&#111;&#109;&#101;&#103;&#97;&#41;" title="Rendered by QuickLaTeX.com" height="21" width="422" style="vertical-align: -6px;" /></p>
+<p>with</p>
+<p><img loading="lazy" src="https://steven.schuerstedt.com/wp-content/ql-cache/quicklatex.com-51999859a0bfa2b5cc56d9ce3641a59c_l3.png" class="ql-img-inline-formula quicklatex-auto-format" alt="&#76;&#94;&#83;&#40;&#92;&#116;&#101;&#120;&#116;&#98;&#102;&#123;&#122;&#125;&#44;&#32;&#92;&#111;&#109;&#101;&#103;&#97;&#41;&#32;&#61;&#32;&#76;&#95;&#101;&#94;&#83;&#40;&#92;&#116;&#101;&#120;&#116;&#98;&#102;&#123;&#122;&#125;&#44;&#32;&#92;&#111;&#109;&#101;&#103;&#97;&#41;&#32;&#43;&#32;&#92;&#105;&#110;&#116;&#95;&#123;&#83;&#94;&#50;&#125;&#32;&#92;&#114;&#104;&#111;&#95;&#83;&#40;&#92;&#111;&#109;&#101;&#103;&#97;&#44;&#32;&#92;&#116;&#101;&#120;&#116;&#98;&#102;&#123;&#122;&#125;&#44;&#32;&#45;&#92;&#111;&#109;&#101;&#103;&#97;&#94;&#92;&#112;&#114;&#105;&#109;&#101;&#41;&#76;&#40;&#92;&#116;&#101;&#120;&#116;&#98;&#102;&#123;&#122;&#125;&#44;&#32;&#92;&#111;&#109;&#101;&#103;&#97;&#94;&#92;&#112;&#114;&#105;&#109;&#101;&#41;&#32;&#92;&#118;&#101;&#114;&#116;&#32;&#92;&#116;&#101;&#120;&#116;&#98;&#102;&#123;&#110;&#125;&#40;&#92;&#116;&#101;&#120;&#116;&#98;&#102;&#123;&#122;&#125;&#41;&#32;&#92;&#99;&#100;&#111;&#116;&#32;&#92;&#111;&#109;&#101;&#103;&#97;&#94;&#92;&#112;&#114;&#105;&#109;&#101;&#32;&#92;&#118;&#101;&#114;&#116;&#32;&#100;&#92;&#111;&#109;&#101;&#103;&#97;&#94;&#92;&#112;&#114;&#105;&#109;&#101;" title="Rendered by QuickLaTeX.com" height="21" width="458" style="vertical-align: -6px;" /></p>
+<p>for vertices on the surface and</p>
+<p><img loading="lazy" src="https://steven.schuerstedt.com/wp-content/ql-cache/quicklatex.com-26a8b9e6fb1afe9bebe3cb63563d1e0d_l3.png" class="ql-img-inline-formula quicklatex-auto-format" alt="&#76;&#94;&#109;&#40;&#92;&#116;&#101;&#120;&#116;&#98;&#102;&#123;&#120;&#125;&#44;&#32;&#92;&#111;&#109;&#101;&#103;&#97;&#41;&#32;&#61;&#32;&#92;&#102;&#114;&#97;&#99;&#123;&#92;&#115;&#105;&#103;&#109;&#97;&#32;&#95;&#97;&#40;&#92;&#116;&#101;&#120;&#116;&#98;&#102;&#123;&#120;&#125;&#41;&#125;&#123;&#92;&#115;&#105;&#103;&#109;&#97;&#32;&#95;&#116;&#40;&#92;&#116;&#101;&#120;&#116;&#98;&#102;&#123;&#120;&#125;&#41;&#125;&#76;&#95;&#101;&#94;&#109;&#40;&#92;&#116;&#101;&#120;&#116;&#98;&#102;&#123;&#120;&#125;&#44;&#32;&#92;&#111;&#109;&#101;&#103;&#97;&#41;&#32;&#43;&#32;&#92;&#102;&#114;&#97;&#99;&#123;&#92;&#115;&#105;&#103;&#109;&#97;&#32;&#95;&#115;&#40;&#92;&#116;&#101;&#120;&#116;&#98;&#102;&#123;&#120;&#125;&#41;&#125;&#123;&#92;&#115;&#105;&#103;&#109;&#97;&#32;&#95;&#116;&#40;&#92;&#116;&#101;&#120;&#116;&#98;&#102;&#123;&#120;&#125;&#41;&#125;&#32;&#92;&#105;&#110;&#116;&#95;&#123;&#83;&#94;&#50;&#125;&#32;&#92;&#114;&#104;&#111;&#95;&#109;&#40;&#92;&#111;&#109;&#101;&#103;&#97;&#44;&#32;&#92;&#116;&#101;&#120;&#116;&#98;&#102;&#123;&#120;&#125;&#44;&#32;&#92;&#111;&#109;&#101;&#103;&#97;&#94;&#92;&#112;&#114;&#105;&#109;&#101;&#41;&#76;&#40;&#92;&#116;&#101;&#120;&#116;&#98;&#102;&#123;&#120;&#125;&#44;&#32;&#92;&#111;&#109;&#101;&#103;&#97;&#94;&#92;&#112;&#114;&#105;&#109;&#101;&#41;&#100;&#92;&#111;&#109;&#101;&#103;&#97;&#94;&#92;&#112;&#114;&#105;&#109;&#101;" title="Rendered by QuickLaTeX.com" height="29" width="466" style="vertical-align: -9px;" /></p>
+<p>for points inside the medium.</p>
+<p>In heterogenous media it is very difficult to sample distances and evaluate the transmittance term T(\textbf{x},\textbf{y}), because of the integral in the exponent. In order to simplify the medium the null-scattering algorithm is used. The heterogenous medium gets filled up with fictous particles, until a constant density is reached. Sampling from this homogenous medium with the null-scattering particles is now possible with a rejection sampling method. But by doing so the pdf for the sample is lost. This is no problem in the normal case, because the pdf with the transmittance will cancel out anyways, but using multiple importance sampling is no longer possible. In the paper “a null-scattering path integral formulation of light tranpsort” written by Bailey Miller, Iliyan Georgiev and Wojciech Jarosz, they describe a way to shift the entire rendering procedure into a null-scattering environment, which allows them to calculate the pdf and use MIS.</p>
+<div class="wp-block-file">
+  <a href="https://steven.schuerstedt.com/wp-content/uploads/2020/10/schuerstedt.pdf">For a more detailed discussion about the priniciples of volume rendering and the null-scattering approach, see my seminararbeit about the topic</a><a href="https://steven.schuerstedt.com/wp-content/uploads/2020/10/schuerstedt.pdf" class="wp-block-file__button" download>Download</a>
+</div>
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section id="comments">
+    <div class="py-3 content">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-sm-12 col-lg-8">
+                    <div class="comments">
+                        <script src="https://utteranc.es/client.js" repo=""
+                            issue-term="pathname" label="comment" theme="github-light" crossorigin="anonymous" async>
+                            </script>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+    
+
+
+    
+
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/highlight.min.js" integrity="sha512-TDKKr+IvoqZnPzc3l35hdjpHD0m+b2EC2SrLEgKDRWpxf2rFCxemkgvJ5kfU48ip+Y+m2XVKyOCD85ybtlZDmw==" crossorigin="anonymous"></script>
+        
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/r.min.js" defer></script>
+        
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/python.min.js" defer></script>
+        
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/stan.min.js" defer></script>
+        
+        <script>
+            window.addEventListener('load', function() {
+                hljs.initHighlighting();
+            }, true);
+        </script>
+    
+
+    
+
+    
+    
+        
+<script src="/js/math-code.js"></script>
+<script async src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+
+    
+</body>
+
+</html>

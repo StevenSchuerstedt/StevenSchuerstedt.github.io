@@ -1,0 +1,221 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title> SteviePhysics - Hugo Themes </title>
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="referrer" content="no-referrer">
+    <meta name="description" content="" />
+    <meta property="og:site_name" content="Hugo Themes" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://stevenschuerstedt.github.io/sketches/steviephysics/" />
+    <meta property="og:title" content="SteviePhysics" />
+    <meta property="og:image" content="https://stevenschuerstedt.github.io/" />
+    <meta property="og:description" content="" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    
+    <meta name="twitter:title" content="SteviePhysics" />
+    <meta name="twitter:description" content="" />
+    <meta name="twitter:image" content="https://stevenschuerstedt.github.io/" />
+
+    <link rel="canonical" href="https://stevenschuerstedt.github.io/sketches/steviephysics/">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha512-MoRNloxbStBcD8z3M/2BmnT+rg4IsMxPkXaGh2zD6LGNNFE80W3onsAhRcMAMrSoyWL9xD7Ert0men7vR8LUZg==" crossorigin="anonymous" />
+
+    <link rel="stylesheet" href="https://stevenschuerstedt.github.io/css/custom.css" />
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/github-gist.min.css" integrity="sha512-od7JLoOTxM8w/HSKGzP9Kexc20K9p/M2zxSWsd7H1e4Ctf+8SQFtCWEZnW5u6ul5ehSECa5QmOk9ju2nQMmlVA==" crossorigin="anonymous" />
+    
+
+    
+
+    <link rel="shortcut icon"
+        href="https://stevenschuerstedt.github.io/images/favicon.png">
+
+    
+    <link href="https://stevenschuerstedt.github.io/index.xml" rel="alternate" type="application/rss+xml" title="Hugo Themes" />
+    
+</head>
+
+<body>
+    
+    <div class="mt-xl header">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-auto">
+                <a href="https://stevenschuerstedt.github.io/">
+                    <h1 class="name">Steven Schürstedt</h1>
+					
+                </a>
+            </div>
+			<img src="https://stevenschuerstedt.github.io//ich.jpg" width="100" height="100" alt="Selfhtml">
+        </div>
+
+        <div class="row justify-content-center">
+            <ul class="nav nav-primary">
+                
+                <li class="nav-item">
+                    <a class="nav-link" href="/">
+                        
+                        Home
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link" href="/sketches/">
+                        
+                        Sketches
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link" href="/about/">
+                        
+                        About
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
+    </div>
+</div>
+
+    <div class="content">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-sm-12 col-lg-8">
+                    <h1 class="mx-0 mx-md-4">SteviePhysics</h1>
+                    <div class="markdown">
+                        
+    <p>Simple Physik Engine für 2D. Nicht für Spiele bzw. interaktive Echtzeitanwendungen sondern einfach nur viel Physik. Gute Möglichkeit um die physikalischen Formel in der “Praxis” auszuprobieren.</p>
+<h3 id="der-schiefe-wurf-ein-einfacher-start">Der Schiefe Wurf, ein einfacher Start</h3>
+<p>Wir befinden uns in der klassischen Mechanik und beginnen mit Newtons Gesetzt. “Kraft gleich Masse mal Beschleunigung”. Was ist Kraft? Da hört unsere Vorstellung auf, aber es funktioniert ja alles gut.</p>
+<p><img loading="lazy" src="https://steven.schuerstedt.com/wp-content/ql-cache/quicklatex.com-0f6fd211837af29e0081f0a8ff39ebb7_l3.png" class="ql-img-inline-formula quicklatex-auto-format" alt="&#92;&#118;&#101;&#99;&#123;&#70;&#125;&#32;&#61;&#32;&#109;&#92;&#118;&#101;&#99;&#123;&#97;&#125;" title="Rendered by QuickLaTeX.com" height="17" width="64" style="vertical-align: 0px;" /></p>
+<p>Zu beachten ist das sowohl die Kraft als auch die Beschleunigung eine vektorielle Größe sind, also eine Richtung haben.</p>
+<p>Beschleunigung ist nichts anderes als die Änderung der Geschwindigkeit, und Geschwindigkeit ist die Änderung der Position. Für die Position interessieren uns wir dann letztendlich auch, der Rest existiert ja nur “gedacht”.</p>
+<p><img loading="lazy" src="https://steven.schuerstedt.com/wp-content/ql-cache/quicklatex.com-df12924a040b980ba09bff4ccd969178_l3.png" class="ql-img-inline-formula quicklatex-auto-format" alt="&#92;&#118;&#101;&#99;&#123;&#97;&#125;&#40;&#116;&#41;&#32;&#61;&#32;&#92;&#100;&#100;&#111;&#116;&#123;&#120;&#125;&#40;&#116;&#41;&#32;&#61;&#32;&#92;&#102;&#114;&#97;&#99;&#123;&#100;&#94;&#50;&#120;&#40;&#116;&#41;&#125;&#123;&#100;&#116;&#94;&#50;&#125;" title="Rendered by QuickLaTeX.com" height="27" width="147" style="vertical-align: -7px;" /></p>
+<p>Jetzt legen wir los mit dem Schiefen Wurf, die einzige Kraft die hier Wirkt ist die Gravitation, in der einfachsten Darstellung:</p>
+<p><img loading="lazy" src="https://steven.schuerstedt.com/wp-content/ql-cache/quicklatex.com-9fc32e1ac6a736303793a721f4857151_l3.png" class="ql-img-inline-formula quicklatex-auto-format" alt="&#92;&#118;&#101;&#99;&#123;&#70;&#125;&#32;&#61;&#32;&#45;&#109;&#92;&#118;&#101;&#99;&#123;&#103;&#125;&#44;&#32;&#92;&#118;&#101;&#99;&#123;&#103;&#125;&#32;&#61;&#32;&#92;&#108;&#101;&#102;&#116;&#40;&#92;&#98;&#101;&#103;&#105;&#110;&#123;&#97;&#114;&#114;&#97;&#121;&#125;&#123;&#99;&#125;&#32;&#48;&#32;&#92;&#92;&#32;&#57;&#46;&#56;&#49;&#32;&#92;&#101;&#110;&#100;&#123;&#97;&#114;&#114;&#97;&#121;&#125;&#92;&#114;&#105;&#103;&#104;&#116;&#41;" title="Rendered by QuickLaTeX.com" height="43" width="187" style="vertical-align: -17px;" /></p>
+<p>Das minus und das<img loading="lazy" src="https://steven.schuerstedt.com/wp-content/ql-cache/quicklatex.com-d3d6d1d954ef1c89c93a91c57d9006ec_l3.png" class="ql-img-inline-formula quicklatex-auto-format" alt="&#92;&#118;&#101;&#99;&#123;&#103;&#125;" title="Rendered by QuickLaTeX.com" height="17" width="11" style="vertical-align: -4px;" /> in der y-Komponente wirkt ist hier erstmal willkürlich gewählt und hängt natürlich vom Koordinatensystem ab.</p>
+<p>Eingesetzt bekommen wir die erste Differenzialgleichung, die jetzt noch recht simpel ist.</p>
+<p><img loading="lazy" src="https://steven.schuerstedt.com/wp-content/ql-cache/quicklatex.com-f68e1d00ee7973b315f6c5c6c507be96_l3.png" class="ql-img-inline-formula quicklatex-auto-format" alt="&#45;&#109;&#92;&#118;&#101;&#99;&#123;&#103;&#125;&#32;&#61;&#32;&#109;&#92;&#100;&#100;&#111;&#116;&#123;&#120;&#125;&#40;&#116;&#41;" title="Rendered by QuickLaTeX.com" height="19" width="106" style="vertical-align: -5px;" /></p>
+<p>Diese Gleichung beschreibt die Bewegung von unseren Körper und wir können sie benutzen um<img loading="lazy" src="https://steven.schuerstedt.com/wp-content/ql-cache/quicklatex.com-5fdd870f5a4b1b070c7d28c0b60eeb31_l3.png" class="ql-img-inline-formula quicklatex-auto-format" alt="&#120;&#40;&#116;&#41;" title="Rendered by QuickLaTeX.com" height="19" width="29" style="vertical-align: -5px;" /> auszurechnen, also die Position des Körpers abhängig von der Zeit, denn die Position ist alles was uns letztendlich interessiert. Generell gibt es bei Differenzialgleichungen mehrere Lösungsstrategien, bei dieser einfachen können wir direkt zwei mal Integrieren und erhalten:</p>
+<p><img loading="lazy" src="https://steven.schuerstedt.com/wp-content/ql-cache/quicklatex.com-e93b91b5fcff45198cc4ee84ad1351d1_l3.png" class="ql-img-inline-formula quicklatex-auto-format" alt="&#92;&#118;&#101;&#99;&#123;&#120;&#40;&#116;&#41;&#125;&#32;&#61;&#32;&#45;&#92;&#102;&#114;&#97;&#99;&#123;&#49;&#125;&#123;&#50;&#125;&#92;&#118;&#101;&#99;&#123;&#103;&#125;&#116;&#94;&#50;&#43;&#92;&#118;&#101;&#99;&#123;&#118;&#95;&#48;&#125;&#116;&#43;&#92;&#118;&#101;&#99;&#123;&#120;&#95;&#48;&#125;" title="Rendered by QuickLaTeX.com" height="25" width="185" style="vertical-align: -6px;" /></p>
+<p>Unsere Differenzialgleichung hat nicht eine eindeutige Lösung, sondern unendlich viele. Jede Funktion die zweimal abgeleitet gleich<img loading="lazy" src="https://steven.schuerstedt.com/wp-content/ql-cache/quicklatex.com-6fb9ee7a136e17046e37c3f6d20ee140_l3.png" class="ql-img-inline-formula quicklatex-auto-format" alt="&#45;&#109;&#103;" title="Rendered by QuickLaTeX.com" height="12" width="38" style="vertical-align: -4px;" /> ergibt ist eine Lösung für unser Problem. Was übrig bleibt sind die Integrationskonstanten, bzw. die Anfangswerte.<img loading="lazy" src="https://steven.schuerstedt.com/wp-content/ql-cache/quicklatex.com-898badcd46de9bc8f635b2d11eeb344a_l3.png" class="ql-img-inline-formula quicklatex-auto-format" alt="&#92;&#118;&#101;&#99;&#123;&#118;&#95;&#48;&#125;" title="Rendered by QuickLaTeX.com" height="16" width="16" style="vertical-align: -3px;" /> beschreibt die Geschwindigkeit die der Körper am Anfang hatte und<img loading="lazy" src="https://steven.schuerstedt.com/wp-content/ql-cache/quicklatex.com-9f55f2a94c0f6960bc2c46c9b5a7da40_l3.png" class="ql-img-inline-formula quicklatex-auto-format" alt="&#92;&#118;&#101;&#99;&#123;&#120;&#95;&#48;&#125;" title="Rendered by QuickLaTeX.com" height="16" width="17" style="vertical-align: -3px;" /> den Anfangsort.</p>
+<p>Die Gleichung kann man jetzt genauso in einer Physik-Engine verwenden, um die Position von Objekten zu berechnen.</p>
+<h4 id="welche-annahmen-wurden-getroffen">Welche Annahmen wurden getroffen?</h4>
+<p>Damit die Berechnung und das Modell funktioniert, wurden einige vereinfachende, idealisierende Annahmen getroffen. So haben wir beispielsweise die Luftreibung ignoriert, die Gravitation vereinfacht und auch die geometrische Beschaffenheit unseres Wurfobjektes ignoriert. Wenn wir unsere Simulation des schiefen Wurfes jetzt realistischer Gestalten möchten, wird es um einiges komplizierter und wir benötigen mehr Informationen über die eigentliche Sache die wir berechnen möchten. Werfen wir unser Objekt in Luft? Oder in einem anderen Medium Wasser? Befinden wir uns auf der Erde? Oder auf einen anderem Planeten, mit anderer Gravitation, welche Planeten befinden sich um uns herum, in welcher Entfernung? Hier stellt sich natürlich auch die Frage welche Fragen für das was wir mit der Physik Engine eigentlich machen wollen relevant sind. Im folgenden möchte ich anschneiden wie eine realistischere Beschreibung des schiefen Wurfes aussehen könnte.</p>
+<h4 id="schiefer-wurf-mit-luftwiderstand">Schiefer Wurf mit Luftwiderstand</h4>
+<p>Die Gleichung für die Luftwiderstandskraft lautet:</p>
+<p><img loading="lazy" src="https://steven.schuerstedt.com/wp-content/ql-cache/quicklatex.com-47e81b0f57d688adff5ab85432fe9f3c_l3.png" class="ql-img-inline-formula quicklatex-auto-format" alt="&#70;&#95;&#123;&#76;&#117;&#102;&#116;&#125;&#32;&#61;&#32;&#92;&#102;&#114;&#97;&#99;&#123;&#49;&#125;&#123;&#50;&#125;&#32;&#99;&#32;&#32;&#65;&#32;&#92;&#114;&#104;&#111;&#32;&#118;&#94;&#50;" title="Rendered by QuickLaTeX.com" height="22" width="123" style="vertical-align: -6px;" /></p>
+<p>interessant ist hierbei das die Gleichung proportional zum Quadrat der Geschwindigkeit ist, ein Umstand der z.b. beim Rennradfahren wichtig ist. Bei hohen Geschwindigkeiten in der Ebene spielt das Windschatten fahren eine große Rolle, bei Bergen hingegen ist es nicht wichtig. Die anderen Variablen beschreiben verschiedene Parameter die noch in die Gleichung mit einfließen,<img loading="lazy" src="https://steven.schuerstedt.com/wp-content/ql-cache/quicklatex.com-da039068127cf2ec5fc05123d4d3546f_l3.png" class="ql-img-inline-formula quicklatex-auto-format" alt="&#92;&#114;&#104;&#111;" title="Rendered by QuickLaTeX.com" height="12" width="9" style="vertical-align: -4px;" /> ist die Dichte des Mediums,<img loading="lazy" src="https://steven.schuerstedt.com/wp-content/ql-cache/quicklatex.com-25b206f25506e6d6f46be832f7119ffa_l3.png" class="ql-img-inline-formula quicklatex-auto-format" alt="&#65;" title="Rendered by QuickLaTeX.com" height="12" width="13" style="vertical-align: 0px;" /> die Fläche des Gegenstandes der auf die Luft trifft und<img loading="lazy" src="https://steven.schuerstedt.com/wp-content/ql-cache/quicklatex.com-41a04eeea923a1a0c28094a8a4680525_l3.png" class="ql-img-inline-formula quicklatex-auto-format" alt="&#99;" title="Rendered by QuickLaTeX.com" height="8" width="8" style="vertical-align: 0px;" /> ein zusätzlicher Parameter für die Oberflächenbeschaffenheit und die Form. Woher diese Gleichung kommt und wieso genau diese Parameter eine Rolle spielen, ist eine gute Frage. Einige Parameter könnten auch zusätzlich von der Geschwindigkeit oder dem Ort abhängen, aber um zu überhaupt einen Ergebnis zu kommen müssen wir ständig Kompromisse eingehen und nicht zu viel Nachfragen.</p>
+<p>Die Kraft für den Luftwiderstand können wir nun mit der Gravitationskraft zusammenführen, um eine neue etwas genauere Differenzialgleichung für den Schiefen Wurf zu erhalten:</p>
+<p><img loading="lazy" src="https://steven.schuerstedt.com/wp-content/ql-cache/quicklatex.com-656b3ea48c72116ed35793125fb7c8f4_l3.png" class="ql-img-inline-formula quicklatex-auto-format" alt="&#92;&#118;&#101;&#99;&#123;&#70;&#125;&#32;&#61;&#32;&#45;&#109;&#92;&#118;&#101;&#99;&#123;&#103;&#125;&#32;&#45;&#32;&#107;&#32;&#92;&#100;&#111;&#116;&#123;&#120;&#125;&#94;&#50;" title="Rendered by QuickLaTeX.com" height="21" width="124" style="vertical-align: -4px;" /> .</p>
+<p>Das Vorzeichen bei der Luftwiderstandskraft stimmt jetzt nicht ganz, da der Luftwiderstand immer entgegen der Bewegung ist, die Gravitationskraft aber immer nach unten zeigt. Deswegen müssen wir den Wurf in drei Phasen unterteilen und die jeweiligen DGL lösen. Das setzt natürlich voraus das die Abhängigkeit von der Geschwindigkeit Komponenten weise Unabhängig ist, was eine weitere Vereinfachung darstellt.</p>
+<p><strong>Horizontal:</strong></p>
+<p><img loading="lazy" src="https://steven.schuerstedt.com/wp-content/ql-cache/quicklatex.com-f8d13cee8546fdacacc955bc7e4ddacf_l3.png" class="ql-img-inline-formula quicklatex-auto-format" alt="&#109;&#92;&#100;&#100;&#111;&#116;&#123;&#120;&#125;&#32;&#61;&#32;&#45;&#107;&#92;&#100;&#111;&#116;&#123;&#120;&#125;&#94;&#50;" title="Rendered by QuickLaTeX.com" height="15" width="90" style="vertical-align: 0px;" /></p>
+<p>Diese DGL ist jetzt schon etwas komplizierter, um sie zu lösen gibt es mehrere Möglichkeiten, wir benützen Trennung der Veränderlichen und kommen auf:</p>
+<p><img loading="lazy" src="https://steven.schuerstedt.com/wp-content/ql-cache/quicklatex.com-ff5edb62b89211afacb33b734be191db_l3.png" class="ql-img-inline-formula quicklatex-auto-format" alt="&#120;&#40;&#116;&#41;&#95;&#123;&#104;&#111;&#114;&#125;&#32;&#61;&#32;&#92;&#102;&#114;&#97;&#99;&#123;&#109;&#125;&#123;&#107;&#125;&#32;&#108;&#110;&#40;&#92;&#102;&#114;&#97;&#99;&#123;&#107;&#125;&#123;&#109;&#125;&#32;&#92;&#100;&#111;&#116;&#123;&#120;&#125;&#95;&#48;&#32;&#116;&#32;&#43;&#49;&#41;" title="Rendered by QuickLaTeX.com" height="22" width="192" style="vertical-align: -6px;" /></p>
+<p>Siehe: <a href="https://matheplanet.com/default3.html?call=article.php?sid=735">https://matheplanet.com/default3.html?call=article.php?sid=735</a></p>
+<p><strong>Vertikal:</strong></p>
+<p>In vertikaler Richtung kann die Luftwiderstandskraft jetzt einmal entgegen der Gravitation wirken und in Richtung der Gravitation, also:</p>
+<p>(I)<img loading="lazy" src="https://steven.schuerstedt.com/wp-content/ql-cache/quicklatex.com-7cbbeb2a4f9ffc614c72d46ef0d2e9ad_l3.png" class="ql-img-inline-formula quicklatex-auto-format" alt="&#109;&#92;&#100;&#100;&#111;&#116;&#123;&#120;&#125;&#32;&#61;&#32;&#45;&#107;&#92;&#100;&#111;&#116;&#123;&#120;&#125;&#94;&#50;&#32;&#45;&#32;&#109;&#103;" title="Rendered by QuickLaTeX.com" height="19" width="137" style="vertical-align: -4px;" /></p>
+<p>(II)<img loading="lazy" src="https://steven.schuerstedt.com/wp-content/ql-cache/quicklatex.com-8befd872396f8a4165d31e67106e7757_l3.png" class="ql-img-inline-formula quicklatex-auto-format" alt="&#109;&#92;&#100;&#100;&#111;&#116;&#123;&#120;&#125;&#32;&#61;&#32;&#107;&#92;&#100;&#111;&#116;&#123;&#120;&#125;&#94;&#50;&#32;&#45;&#109;&#103;" title="Rendered by QuickLaTeX.com" height="19" width="124" style="vertical-align: -4px;" /></p>
+<p>Hier wird es nun schon ziemlich kompliziert und unhandlich, da beide DGLs keine einfache Lösung besitzen. Für die erste Gleichung kann man wieder Trennung der Veränderlichen benützen und muss dann nicht ganz einfache Integrale lösen. Das Ergebnis ist dann:</p>
+<p>(I)<img loading="lazy" src="https://steven.schuerstedt.com/wp-content/ql-cache/quicklatex.com-93a8eb4a69a4bff2aba596115fc7ca60_l3.png" class="ql-img-inline-formula quicklatex-auto-format" alt="&#121;&#40;&#116;&#41;&#95;&#123;&#97;&#117;&#102;&#119;&auml;&#114;&#116;&#115;&#125;&#32;&#61;&#32;&#92;&#102;&#114;&#97;&#99;&#123;&#118;&#95;&#123;&#115;&#125;&#94;&#50;&#125;&#123;&#103;&#125;&#42;&#40;&#108;&#110;&#40;&#99;&#111;&#115;&#40;&#92;&#102;&#114;&#97;&#99;&#123;&#103;&#40;&#116;&#95;&#85;&#32;&#45;&#32;&#116;&#41;&#125;&#123;&#118;&#95;&#115;&#125;&#41;&#41;&#32;&#45;&#32;&#108;&#110;&#40;&#99;&#111;&#115;&#40;&#92;&#102;&#114;&#97;&#99;&#123;&#103;&#116;&#95;&#85;&#125;&#123;&#118;&#95;&#115;&#125;&#41;&#41;&#41;" title="Rendered by QuickLaTeX.com" height="29" width="397" style="vertical-align: -9px;" /></p>
+<p>mit<img loading="lazy" src="https://steven.schuerstedt.com/wp-content/ql-cache/quicklatex.com-86172a705910222f57932a2aa476cdbe_l3.png" class="ql-img-inline-formula quicklatex-auto-format" alt="&#118;&#95;&#115;&#32;&#61;&#32;&#92;&#115;&#113;&#114;&#116;&#123;&#92;&#102;&#114;&#97;&#99;&#123;&#109;&#103;&#125;&#123;&#107;&#125;&#125;" title="Rendered by QuickLaTeX.com" height="32" width="81" style="vertical-align: -11px;" /> und<img loading="lazy" src="https://steven.schuerstedt.com/wp-content/ql-cache/quicklatex.com-1196ef0c219323c6a7b6802bc1d8444a_l3.png" class="ql-img-inline-formula quicklatex-auto-format" alt="&#116;&#95;&#85;&#32;&#61;&#32;&#92;&#102;&#114;&#97;&#99;&#123;&#118;&#95;&#115;&#125;&#123;&#103;&#125;&#97;&#116;&#97;&#110;&#40;&#92;&#102;&#114;&#97;&#99;&#123;&#92;&#100;&#111;&#116;&#123;&#121;&#125;&#95;&#48;&#125;&#123;&#118;&#95;&#115;&#125;&#41;" title="Rendered by QuickLaTeX.com" height="26" width="125" style="vertical-align: -9px;" /></p>
+<p>und</p>
+<p>(II)<img loading="lazy" src="https://steven.schuerstedt.com/wp-content/ql-cache/quicklatex.com-a51aa0ce1270fbd777a56e3e271e12dd_l3.png" class="ql-img-inline-formula quicklatex-auto-format" alt="&#121;&#40;&#116;&#41;&#95;&#123;&#97;&#98;&#119;&auml;&#114;&#116;&#115;&#125;&#32;&#61;&#32;&#45;&#92;&#102;&#114;&#97;&#99;&#123;&#118;&#95;&#115;&#103;&#40;&#116;&#45;&#116;&#95;&#85;&#41;&#125;&#123;&#103;&#125;&#45;&#92;&#102;&#114;&#97;&#99;&#123;&#118;&#95;&#115;&#94;&#50;&#125;&#123;&#103;&#125;&#108;&#110;&#40;&#92;&#102;&#114;&#97;&#99;&#123;&#49;&#43;&#101;&#94;&#123;&#45;&#92;&#102;&#114;&#97;&#99;&#123;&#50;&#103;&#40;&#116;&#45;&#116;&#95;&#85;&#41;&#125;&#123;&#118;&#95;&#115;&#125;&#125;&#125;&#123;&#50;&#125;&#32;&#99;&#111;&#115;&#40;&#92;&#102;&#114;&#97;&#99;&#123;&#103;&#116;&#95;&#85;&#125;&#123;&#118;&#95;&#115;&#125;&#41;&#41;" title="Rendered by QuickLaTeX.com" height="38" width="407" style="vertical-align: -9px;" /></p>
+<p>Wenn wir jetzt etwas genauer werde wollen und nicht mehr annehmen das die Reibekraft unabhängig in x- und y-Richtung wirkt, sondern vom Betragsquadrat der Geschwindigkeit abhängt, dann haben wir ein Problem. Die dann erhaltene DGL ist nicht mehr analytisch lösbar.</p>
+<h4 id="numerisches-lösen-der-bewegungsgleichungen">Numerisches Lösen der Bewegungsgleichungen</h4>
+<p>Um die Newton Bewegungsleichungen numerisch zu lösen, formulieren wir die DGL zweiter Ordnung in zwei Gleichungen erster Ordnung um.</p>
+<p><img loading="lazy" src="https://steven.schuerstedt.com/wp-content/ql-cache/quicklatex.com-ada573b9d4aab29758cbd3ab4fa2351c_l3.png" class="ql-img-inline-formula quicklatex-auto-format" alt="&#70;&#32;&#61;&#32;&#109;&#92;&#100;&#100;&#111;&#116;&#123;&#120;&#125;" title="Rendered by QuickLaTeX.com" height="12" width="63" style="vertical-align: 0px;" /> =&gt; eine Gleichung zweiter Ordnung</p>
+<p><img loading="lazy" src="https://steven.schuerstedt.com/wp-content/ql-cache/quicklatex.com-cbf5de5e08b3a0869683046035183987_l3.png" class="ql-img-inline-formula quicklatex-auto-format" alt="&#70;&#32;&#61;&#32;&#109;&#92;&#100;&#111;&#116;&#123;&#118;&#125;" title="Rendered by QuickLaTeX.com" height="12" width="62" style="vertical-align: 0px;" /></p>
+<p><img loading="lazy" src="https://steven.schuerstedt.com/wp-content/ql-cache/quicklatex.com-d6f569502f77616b25335c591893a535_l3.png" class="ql-img-inline-formula quicklatex-auto-format" alt="&#92;&#100;&#111;&#116;&#123;&#120;&#125;&#32;&#61;&#32;&#118;" title="Rendered by QuickLaTeX.com" height="12" width="43" style="vertical-align: 0px;" /> =&gt; zwei Gleichungen erster Ordnung</p>
+<p>DGL erster Ordnung können jetzt einfach in äquivalente Integralgleichungen umgeformt werden, dabei darf natürlich nicht die Integrationskonstante bzw. der Anfangswert vergessen werden.</p>
+<p><img loading="lazy" src="https://steven.schuerstedt.com/wp-content/ql-cache/quicklatex.com-18e451e0ea6e5930e520fb225e47420a_l3.png" class="ql-img-inline-formula quicklatex-auto-format" alt="&#120;&#40;&#116;&#41;&#32;&#61;&#32;&#120;&#95;&#48;&#32;&#43;&#32;&#92;&#105;&#110;&#116;&#95;&#123;&#116;&#95;&#48;&#125;&#94;&#116;&#32;&#118;&#32;&#100;&#116;" title="Rendered by QuickLaTeX.com" height="26" width="142" style="vertical-align: -8px;" /></p>
+<p><img loading="lazy" src="https://steven.schuerstedt.com/wp-content/ql-cache/quicklatex.com-58bfdd06cb1819258044907915390026_l3.png" class="ql-img-inline-formula quicklatex-auto-format" alt="&#118;&#40;&#116;&#41;&#32;&#61;&#32;&#118;&#95;&#48;&#32;&#43;&#32;&#92;&#105;&#110;&#116;&#95;&#123;&#116;&#95;&#48;&#125;&#94;&#116;&#32;&#92;&#102;&#114;&#97;&#99;&#123;&#70;&#125;&#123;&#109;&#125;&#100;&#116;" title="Rendered by QuickLaTeX.com" height="26" width="146" style="vertical-align: -8px;" /></p>
+<p>Diese beiden Integrale können jetzt numerisch gelöst werden, eine einfache Regel wäre dafür das explizite Euler-Verfahren, was ähnlich zur Riemann Summe ist. Wir zerlegen das Integral in viele kleine Teile die jeweils im Abstand<img loading="lazy" src="https://steven.schuerstedt.com/wp-content/ql-cache/quicklatex.com-14b463d0ecd5b350ced6cf1d6a12eef3_l3.png" class="ql-img-inline-formula quicklatex-auto-format" alt="&#104;" title="Rendered by QuickLaTeX.com" height="12" width="10" style="vertical-align: 0px;" /> voneinander entfernt sind, um nähern das jedes Teilstück mit einem Rechteck an. Alles aufsummiert ergibt dann das Ergebnis. Je kleiner<img loading="lazy" src="https://steven.schuerstedt.com/wp-content/ql-cache/quicklatex.com-14b463d0ecd5b350ced6cf1d6a12eef3_l3.png" class="ql-img-inline-formula quicklatex-auto-format" alt="&#104;" title="Rendered by QuickLaTeX.com" height="12" width="10" style="vertical-align: 0px;" /> ist, desto genauer ist natürlich das Ergebnis. In der Literatur wird das Verfahren immer rekursiv definiert, das mache ich hier genauso, ist auch praktisch für die Implementation.</p>
+<p><img loading="lazy" src="https://steven.schuerstedt.com/wp-content/ql-cache/quicklatex.com-98cbaf5f4a8b6a3b0350688b41db01a8_l3.png" class="ql-img-inline-formula quicklatex-auto-format" alt="&#120;&#95;&#123;&#107;&#43;&#49;&#125;&#32;&#61;&#32;&#120;&#95;&#107;&#32;&#43;&#32;&#104;&#32;&#118;&#95;&#123;&#107;&#43;&#49;&#125;" title="Rendered by QuickLaTeX.com" height="17" width="143" style="vertical-align: -5px;" /></p>
+<p><img loading="lazy" src="https://steven.schuerstedt.com/wp-content/ql-cache/quicklatex.com-45248609503d800bb07a91dd2c7b82ab_l3.png" class="ql-img-inline-formula quicklatex-auto-format" alt="&#118;&#95;&#123;&#107;&#43;&#49;&#125;&#32;&#61;&#32;&#118;&#95;&#107;&#32;&#43;&#32;&#104;&#92;&#102;&#114;&#97;&#99;&#123;&#70;&#125;&#123;&#109;&#125;" title="Rendered by QuickLaTeX.com" height="22" width="122" style="vertical-align: -6px;" /></p>
+<p><strong>=&gt; monte carlo</strong></p>
+<p>Ziehe Zufallszahl zwischen Intervallgrenzen und nähere Integral an. Integralgrenzen sind die Startzeit (=0) und die aktuelle gewünschte Zeit. Das erste Integral verweist dann über<img loading="lazy" src="https://steven.schuerstedt.com/wp-content/ql-cache/quicklatex.com-bf6f3f032e9eb6084265f06791454342_l3.png" class="ql-img-inline-formula quicklatex-auto-format" alt="&#118;&#40;&#116;&#41;" title="Rendered by QuickLaTeX.com" height="19" width="28" style="vertical-align: -5px;" /> auf die zweite Gleichung. Wie aber<img loading="lazy" src="https://steven.schuerstedt.com/wp-content/ql-cache/quicklatex.com-9cab50aaa9823eff6906488b66151d85_l3.png" class="ql-img-inline-formula quicklatex-auto-format" alt="&#70;&#40;&#116;&#41;" title="Rendered by QuickLaTeX.com" height="19" width="33" style="vertical-align: -5px;" /> zu einem Zeitpunkt<img loading="lazy" src="https://steven.schuerstedt.com/wp-content/ql-cache/quicklatex.com-b4e3cbf5d4c5c6d9b702dd139f14c147_l3.png" class="ql-img-inline-formula quicklatex-auto-format" alt="&#116;" title="Rendered by QuickLaTeX.com" height="12" width="6" style="vertical-align: 0px;" /> auswerten, wenn<img loading="lazy" src="https://steven.schuerstedt.com/wp-content/ql-cache/quicklatex.com-2510519bbe1660dfdffb4195c7287343_l3.png" class="ql-img-inline-formula quicklatex-auto-format" alt="&#70;" title="Rendered by QuickLaTeX.com" height="12" width="14" style="vertical-align: 0px;" /> mit der Reibung wieder auf<img loading="lazy" src="https://steven.schuerstedt.com/wp-content/ql-cache/quicklatex.com-6bc6064f1ddc8d661f00698f562b4616_l3.png" class="ql-img-inline-formula quicklatex-auto-format" alt="&#92;&#100;&#111;&#116;&#123;&#120;&#125;" title="Rendered by QuickLaTeX.com" height="12" width="10" style="vertical-align: 0px;" /> verweist?</p>
+<h4 id="schiefer-wurf-als-zwei-körperproblem">Schiefer Wurf als Zwei-Körperproblem</h4>
+<p>Eine weitere mögliche Erweiterung ist es den schiefen Wurf als Zwei-Körper Problem zu betrachten. Nach unseren Vorstellungen der Physik wirkt die Gravitation in beide Richtungen, d.h. unser Wurfgeschoss wird von der Erde (oder einen anderen Planeten) angezogen, aber genauso wird auch die Erde von unseren Wurfgeschoss angezogen. Natürlich unterscheiden sich die beiden Massen enorm, wodurch dieser Effekt kaum zum Tragen kommt. Wenn man diese beidseitige Anziehung als Differenzialgleichungen formuliert und auflöst, kommt man zu den Keplerbahnen, welche eine Ellipse darstellen. Kepler hatte dieses Problem bei der Gravitation von Planeten untereinander untersucht, hier sind die Massen natürlich wesentlich näher zusammen. Genau genommen ist ein Zwei-Körperproblem immer noch zu eng gefasst, unser Wurfgeschoss wird ja eigentlich nicht nur von der Erde angezogen, sondern auch von der Sonne (und allen anderen Objekten im Universum, die Gravitation hört laut Theorie nie auf). Doch beim Drei-Körper-Problem gibt es schon keine Lösung mehr der Differentialgleichungen, und das ganze verfällt schnell in ein chaotisches System.</p>
+<h4 id="jetzt-wird-gependelt">Jetzt wird gependelt</h4>
+<p>Das Fadenpendel, zum Einstieg wieder mit einfacher Gewichtskraft und mit ohne Reibung. Auf die Masser wirkt wieder die Gewichtskraft, aber durch den Faden wird ein Teil der Gewichtskraft durch die Gegenkraft des Fadens kompensiert. Wenn wir den Kraftvektor der Gewichtskraft in einen Radial und einen Tangentialteil aufteilen, dann wird der Radialteil vollständig vom Faden kompensiert und nur die Tangentialekraft spielt für die Bewegung eine Rolle. Hier eignen sich nun Polarkoordinaten, da dann eine Koordinate eleminiert werden kann. (genau die Radiale eben)</p>
+<p>$$ x = r \cos{\theta}$$
+$$ y = r \ sin{\theta}$$</p>
+<p>Mit der neuen Koordinate <code>$\theta$</code> können wir jetzt die Bewegungsgleichung mit der Tangentialkraft formulieren.</p>
+<p>$$ \ddot{\theta} = - \frac{g}{l} \sin{\theta} $$
+Wobei <code>$l$</code> die Länge des Fadens ist.</p>
+<p>Für kleine Winkel kann der sinus als gute Annäherung weggelassen werden und die dann einfachere Gleichung kann mit einem Exponential Ansatz oder den sinus/cosinus Funktionen gelöst werden. So wie die Gleichung eigentlich lautet führt die Lösung auf elliptische Integrale, die dann keine explizite Lösung haben, sondern sich z.B. als unendlich Reihe annähern lassen.</p>
+<p>$$ \theta = \theta_0 \cos{\frac{g}{l} t} $$</p>
+<p>Diese Gleichung kann jetzt als Pendelsimulation verwendet werden, aber natürlich muss die Koordinate <code>$\theta$</code> noch in die Koordinaten x und y zurücktransformiert werden, wie oben beschrieben, da ja unser Bildschirm rechteckig ist und somit letztlich nur kartesische Koordinaten versteht.</p>
+<p>Lagrange-Mechanik (Pendel, beispiel für Schiefer Wurf?)</p>
+<p>=&gt; keine Reibung mit Lagrange (Was ist Reibung?)</p>
+<p>Finde Bewegungsgleichungen mit Lagrange-Ansatz und füge dann Reibungskräfte hinzu.</p>
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section id="comments">
+    <div class="py-3 content">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-sm-12 col-lg-8">
+                    <div class="comments">
+                        <script src="https://utteranc.es/client.js" repo=""
+                            issue-term="pathname" label="comment" theme="github-light" crossorigin="anonymous" async>
+                            </script>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+    
+
+
+    
+
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/highlight.min.js" integrity="sha512-TDKKr+IvoqZnPzc3l35hdjpHD0m+b2EC2SrLEgKDRWpxf2rFCxemkgvJ5kfU48ip+Y+m2XVKyOCD85ybtlZDmw==" crossorigin="anonymous"></script>
+        
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/r.min.js" defer></script>
+        
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/python.min.js" defer></script>
+        
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/stan.min.js" defer></script>
+        
+        <script>
+            window.addEventListener('load', function() {
+                hljs.initHighlighting();
+            }, true);
+        </script>
+    
+
+    
+
+    
+    
+        
+<script src="/js/math-code.js"></script>
+<script async src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+
+    
+</body>
+
+</html>

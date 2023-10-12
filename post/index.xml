@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Posts on Hugo Themes</title>
+    <link>https://stevenschuerstedt.github.io/post/</link>
+    <description>Recent content in Posts on Hugo Themes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Copyright © 2008–2019, Steve Francia and the Hugo Authors; all rights reserved.</copyright>
+    <lastBuildDate>Thu, 12 Oct 2023 00:00:00 +0000</lastBuildDate><atom:link href="https://stevenschuerstedt.github.io/post/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Komplexitaetstheorie</title>
+      <link>https://stevenschuerstedt.github.io/post/komplexitaetstheorie/</link>
+      <pubDate>Thu, 12 Oct 2023 00:00:00 +0000</pubDate>
+      
+      <guid>https://stevenschuerstedt.github.io/post/komplexitaetstheorie/</guid>
+      <description>Komplexitätstheorie Komplexitätstheorie beschäftigt sich mit der Theorie des Berechnens. Genauer mit der Komplexität von Problemen, die mit Berechnungen gelöst werden. Komplexität bezieht sich dabei auf das Maß der Verwendeten Ressourcen. Hierbei gibt es Zeit und Platz, wobei beide eng miteinander verwandt sind (?).
+Die Krux und Schwierigkeit von Komplexitätstheorie: Fokus auf der $\textbf{intrinsischen}$ Komplexität von Problemen.
+Ein Problem kann sein: Ist Zahl X eine Primzahl? Sind diese beiden Graphen isomorph? Was ist die Lösung für dieses Sudoku?</description>
+    </item>
+    
+    <item>
+      <title>MicroStevie</title>
+      <link>https://stevenschuerstedt.github.io/post/microstevie/</link>
+      <pubDate>Wed, 14 Apr 2021 14:34:04 +0000</pubDate>
+      
+      <guid>https://stevenschuerstedt.github.io/post/microstevie/</guid>
+      <description>MicroStevie is the implementation of a OISC (= One instruction set computer) CPU using the Basys-3 FPGA and verilog.
+How many instructions does a computer need to be turing complete? CISC Architectures like Intel x86 have thousand of different instructions, but what is the bare minimun needed for computation? As is turns out there is only one instruction needed for universal computation. This kind of architectures are called OISC and there are alot of different ways to design this one instruction.</description>
+    </item>
+    
+    <item>
+      <title>StevieTrace - Computer Graphics and Path Tracing</title>
+      <link>https://stevenschuerstedt.github.io/post/computer-graphics-and-path-tracing/</link>
+      <pubDate>Tue, 13 Oct 2020 08:12:42 +0000</pubDate>
+      
+      <guid>https://stevenschuerstedt.github.io/post/computer-graphics-and-path-tracing/</guid>
+      <description>In computer graphics there exist two big categories that use a different approach to render an image to the display. These are online- and offline or realtime- and no realtime rendering. In computer games, or any other interactive media the computer needs to respond to the input of the user in a short amount of time to give the illusion of a continous media experience. Frames need to be rendered at about 60 times per second, so the time spent for one frame is very little.</description>
+    </item>
+    
+    <item>
+      <title>StevieJump</title>
+      <link>https://stevenschuerstedt.github.io/post/steviejump/</link>
+      <pubDate>Tue, 21 Jul 2020 06:56:38 +0000</pubDate>
+      
+      <guid>https://stevenschuerstedt.github.io/post/steviejump/</guid>
+      <description>StevieJump is a fast paced jump’n’run’n’gun game. The goal is to climb an endless tower while fighting enemies and collecting upgrades, to get on the top of the scoreboard.
+I programmed Stevie Jump during the summer semester of the year 2020. The idea was to use my programming skills to create an application of my own completly from scratch. I started with an empty visual studio project and worked my way up using c++, openGL and many other libraries.</description>
+    </item>
+    
+    <item>
+      <title>8-Bit Computer</title>
+      <link>https://stevenschuerstedt.github.io/post/8-bit-computer/</link>
+      <pubDate>Sat, 18 Apr 2020 14:52:38 +0000</pubDate>
+      
+      <guid>https://stevenschuerstedt.github.io/post/8-bit-computer/</guid>
+      <description>Der Computer ist wohl unbestreitbar eine der einflussreichsten Erfindungen der Menschheit. Zum Zeitpunkt der Erstellung dieses Artikels wird der Computer in allen Lebensbereichen verwendet und bietet eine enorme Hilfe um Tätigkeiten zu automatisieren und zu digitalisieren, bzw. durch den Computer erhalten diese Begriffe überhaupt eine Bedeutung. Bei meiner täglichen Arbeit mit dem Computer stellt sich mir die Frage, wie dieses Gerät genau funktioniert. Ich gehöre zu einer Generation in der die Computertechnologie schon seit meiner Kindheit weit fortgeschritten war und ich den Entwicklungsprozess des Computers, von mechanischen Rechenmaschinen zu winzigen Mikroprozessoren nicht verfolgen konnte.</description>
+    </item>
+    
+    <item>
+      <title>Kugelflächenfunktionen</title>
+      <link>https://stevenschuerstedt.github.io/post/kugelflachenfunktionen/</link>
+      <pubDate>Tue, 07 Jan 2020 11:53:02 +0000</pubDate>
+      
+      <guid>https://stevenschuerstedt.github.io/post/kugelflachenfunktionen/</guid>
+      <description>Ich bin mit den Kugelflächenfunktionen das erste mal in einer Vorlesung über Computergrafik in Berührung gekommen, wo dieses Thema recht schnell abgehandelt wurde. Die komplexen Formeln haben mich fasziniert und ich wollte etwas tiefer in die Thematik eintauchen und herausfinden wie diese Konstruktion genau funktioniert. Auf den Weg dabei habe ich viele interessante Sachen gelernt die hier im folgenden erläutert werden. Bei mathematischen Zusammenhängen ist es mir wichtig ein Intuitives Verständnis für die Sachlage zu haben.</description>
+    </item>
+    
+  </channel>
+</rss>

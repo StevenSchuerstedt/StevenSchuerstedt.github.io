@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Hugo Themes</title>
+    <link>https://stevenschuerstedt.github.io/sketches/</link>
+    <description>Recent content on Hugo Themes</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en</language>
+    <copyright>Copyright © 2008–2019, Steve Francia and the Hugo Authors; all rights reserved.</copyright>
+    <lastBuildDate>Mon, 08 Nov 2021 16:36:38 +0000</lastBuildDate><atom:link href="https://stevenschuerstedt.github.io/sketches/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Quantum Optimization</title>
+      <link>https://stevenschuerstedt.github.io/sketches/quantum_optimization/</link>
+      <pubDate>Mon, 08 Nov 2021 16:36:38 +0000</pubDate>
+      
+      <guid>https://stevenschuerstedt.github.io/sketches/quantum_optimization/</guid>
+      <description>$$\newcommand{\bra}[1]{\left&amp;lt;#1\right|}\newcommand{\ket}[1]{\left|#1\right&amp;gt;}\newcommand{\bk}[2]{\left&amp;lt;#1\middle|#2\right&amp;gt;}\newcommand{\bke}[3]{\left&amp;lt;#1\middle|#2\middle|#3\right&amp;gt;}$$
+Using Quantum Computing for hard (np) combinatorial problems. These problems cannot really be solved efficiently classically (only by limiting to certain problem instances, using heuristics), so the question is if there could be a significant speedup using Quantum Computing.
+Quantum algorithm paradigms  Quantum Fourier Transformation Grover Operator Harrow-Hassidim-Lloyd variational quantum eingenvalue solver (VQE) direct Hamiltonian simulation (SIM)  Traveling Salesman &amp;amp; Orienteering Problem  NP Hard Problems (solution can be verified in polynomial time) can be stated as NP-Complete Problems (as hard as any problem in NP, only decision problems)  Note: only the worst case instances are NP hard (these instance are not easy to construct), in practice a lot of instance can be solved in P time.</description>
+    </item>
+    
+    <item>
+      <title>Quantum Computing Basics</title>
+      <link>https://stevenschuerstedt.github.io/sketches/quantum_computing_basics/</link>
+      <pubDate>Thu, 14 Oct 2021 16:36:38 +0000</pubDate>
+      
+      <guid>https://stevenschuerstedt.github.io/sketches/quantum_computing_basics/</guid>
+      <description>$$\newcommand{\bra}[1]{\left&amp;lt;#1\right|}\newcommand{\ket}[1]{\left|#1\right&amp;gt;}\newcommand{\bk}[2]{\left&amp;lt;#1\middle|#2\right&amp;gt;}\newcommand{\bke}[3]{\left&amp;lt;#1\middle|#2\middle|#3\right&amp;gt;}$$
+Classical Computation with Linear Algebra one bit system
+$\left(\begin{array}{c} 1 \cr 0 \end{array}\right)$ $\begin{matrix}0 \cr 1 \end{matrix}$, this means the bit is in state 0
+$\left(\begin{array}{c} 0 \cr 1 \end{array}\right)$ $\begin{matrix}0 \cr 1 \end{matrix}$, this bit is in state 1
+For a two bit system we consider the tensor product between two arbitrary one bit systems
+$$\left(\begin{array}{c} 0 \cr 1 \end{array}\right) \otimes \left(\begin{array}{c} 1 \cr 0 \end{array}\right) = \left(\begin{array}{c} 0 \cr 0 \cr 1 \cr 0 \end{array}\right) \begin{matrix}00 \cr 01 \cr 10 \cr 11 \end{matrix}$$</description>
+    </item>
+    
+    <item>
+      <title>SteviePhysics</title>
+      <link>https://stevenschuerstedt.github.io/sketches/steviephysics/</link>
+      <pubDate>Wed, 14 Apr 2021 14:34:04 +0000</pubDate>
+      
+      <guid>https://stevenschuerstedt.github.io/sketches/steviephysics/</guid>
+      <description>Simple Physik Engine für 2D. Nicht für Spiele bzw. interaktive Echtzeitanwendungen sondern einfach nur viel Physik. Gute Möglichkeit um die physikalischen Formel in der “Praxis” auszuprobieren.
+Der Schiefe Wurf, ein einfacher Start Wir befinden uns in der klassischen Mechanik und beginnen mit Newtons Gesetzt. “Kraft gleich Masse mal Beschleunigung”. Was ist Kraft? Da hört unsere Vorstellung auf, aber es funktioniert ja alles gut.
+Zu beachten ist das sowohl die Kraft als auch die Beschleunigung eine vektorielle Größe sind, also eine Richtung haben.</description>
+    </item>
+    
+    <item>
+      <title>StevieSnake – on bare metal</title>
+      <link>https://stevenschuerstedt.github.io/sketches/stevieos/</link>
+      <pubDate>Thu, 26 Nov 2020 18:12:08 +0000</pubDate>
+      
+      <guid>https://stevenschuerstedt.github.io/sketches/stevieos/</guid>
+      <description>Nach den 8bit Computer ist die spannende Frage wie die einfachen Prinzipien sich auf ein modernes PC System übertragen. Mein Ziel ist es für ein modernen Prozessor ein einfaches Spiel on bare metal, also quasi ohne jegliche Hilfsmittel zu programmieren. Dabei wird schnell klar das ein modernes System viel komplizierter ist als der 8bit Computer, und auch viel komplizierter als es eigentlich hätte sein müssen. Gründe dafür sind vor allem praktischer Natur, zum einen die strenge Rückwärtskompatibilität und die Zurückhaltung von Informationen.</description>
+    </item>
+    
+  </channel>
+</rss>

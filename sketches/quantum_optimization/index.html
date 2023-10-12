@@ -1,0 +1,289 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title> Quantum Optimization - Hugo Themes </title>
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="referrer" content="no-referrer">
+    <meta name="description" content="" />
+    <meta property="og:site_name" content="Hugo Themes" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://stevenschuerstedt.github.io/sketches/quantum_optimization/" />
+    <meta property="og:title" content="Quantum Optimization" />
+    <meta property="og:image" content="https://stevenschuerstedt.github.io/" />
+    <meta property="og:description" content="" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    
+    <meta name="twitter:title" content="Quantum Optimization" />
+    <meta name="twitter:description" content="" />
+    <meta name="twitter:image" content="https://stevenschuerstedt.github.io/" />
+
+    <link rel="canonical" href="https://stevenschuerstedt.github.io/sketches/quantum_optimization/">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha512-MoRNloxbStBcD8z3M/2BmnT+rg4IsMxPkXaGh2zD6LGNNFE80W3onsAhRcMAMrSoyWL9xD7Ert0men7vR8LUZg==" crossorigin="anonymous" />
+
+    <link rel="stylesheet" href="https://stevenschuerstedt.github.io/css/custom.css" />
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/github-gist.min.css" integrity="sha512-od7JLoOTxM8w/HSKGzP9Kexc20K9p/M2zxSWsd7H1e4Ctf+8SQFtCWEZnW5u6ul5ehSECa5QmOk9ju2nQMmlVA==" crossorigin="anonymous" />
+    
+
+    
+
+    <link rel="shortcut icon"
+        href="https://stevenschuerstedt.github.io/images/favicon.png">
+
+    
+    <link href="https://stevenschuerstedt.github.io/index.xml" rel="alternate" type="application/rss+xml" title="Hugo Themes" />
+    
+</head>
+
+<body>
+    
+    <div class="mt-xl header">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-auto">
+                <a href="https://stevenschuerstedt.github.io/">
+                    <h1 class="name">Steven Schürstedt</h1>
+					
+                </a>
+            </div>
+			<img src="https://stevenschuerstedt.github.io//ich.jpg" width="100" height="100" alt="Selfhtml">
+        </div>
+
+        <div class="row justify-content-center">
+            <ul class="nav nav-primary">
+                
+                <li class="nav-item">
+                    <a class="nav-link" href="/">
+                        
+                        Home
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link" href="/sketches/">
+                        
+                        Sketches
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link" href="/about/">
+                        
+                        About
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
+    </div>
+</div>
+
+    <div class="content">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-sm-12 col-lg-8">
+                    <h1 class="mx-0 mx-md-4">Quantum Optimization</h1>
+                    <div class="markdown">
+                        
+    <p>$$\newcommand{\bra}[1]{\left&lt;#1\right|}\newcommand{\ket}[1]{\left|#1\right&gt;}\newcommand{\bk}[2]{\left&lt;#1\middle|#2\right&gt;}\newcommand{\bke}[3]{\left&lt;#1\middle|#2\middle|#3\right&gt;}$$</p>
+<p>Using Quantum Computing for hard (np) combinatorial problems. These problems cannot really be solved efficiently classically (only by limiting to certain problem instances, using heuristics), so the question is if there could be a significant speedup using Quantum Computing.</p>
+<h3 id="quantum-algorithm-paradigms">Quantum algorithm paradigms</h3>
+<ul>
+<li>Quantum Fourier Transformation</li>
+<li>Grover Operator</li>
+<li>Harrow-Hassidim-Lloyd</li>
+<li>variational quantum eingenvalue solver (VQE)</li>
+<li>direct Hamiltonian simulation (SIM)</li>
+</ul>
+<h3 id="traveling-salesman--orienteering-problem">Traveling Salesman &amp; Orienteering Problem</h3>
+<ul>
+<li>NP Hard Problems (solution can be verified in polynomial time)</li>
+<li>can be stated as NP-Complete Problems (as hard as any problem in NP, only decision problems)</li>
+</ul>
+<p>Note: only the worst case instances are NP hard (these instance are not easy to construct), in practice a lot of instance can be solved in P time.</p>
+<p>Combinatorial Optimization: discrete solutions with real value function
+(e.g. Knapsack, Traveling Salesman)</p>
+<p>Formulate these combinatorial Problems as linear programming problems. (linear programs)
+in case of no real numbers allowed: integer programming</p>
+<p>Ising Hamiltonian: MaxCut is equivalent to solving Ising model interpretation</p>
+<p>IBM cplex (optimizer for classical computers)</p>
+<ul>
+<li>Qiskit Aqua provides many algorithms (e.g. VQE and also QUAO)</li>
+</ul>
+<p><a href="https://qiskit.org/documentation/apidoc/qiskit.aqua.algorithms.html">https://qiskit.org/documentation/apidoc/qiskit.aqua.algorithms.html</a></p>
+<h4 id="heuristic-algorithms">Heuristic Algorithms</h4>
+<ul>
+<li>most powerful algorithms are heuristcs
+=&gt; sacrifice correctness, accuracy, precision for speed
+(gradient descent, deep learning, genetic algorithm)</li>
+<li>in contrast to classical algorithm, that are theoretically perfect but slow</li>
+</ul>
+<h3 id="describe-combinatorial-problems-as-diagonal-hamiltonian-ising-hamiltonian">Describe Combinatorial Problems as diagonal Hamiltonian (Ising Hamiltonian)</h3>
+<p>The Hamiltonian of any physical system describes its dynamics (movement). Naturally every system converges to its minimum energy state.</p>
+<p>Generell Strategy: convert problem to hamiltonian (hermitian operator), solution to optimization problem is the largest (smallest) eigenvalue eigenvector.</p>
+<p>Lets consider a boolen function <code>$f : \{ 0, 1 \} ^n \rightarrow \mathbb{R}$</code>, which takes a boolean string <code>$\textbf{x}$</code> of length n (the description of a specific instance of the combinatorial problem) and outputs a score, or some real number describing the length, time, points, edges etc.</p>
+<p>Now lets construct a diagonal hamiltonian such that,</p>
+<p>$$H_f \ket{\textbf{x}} = f(\textbf{x}) \ket{\textbf{x}} $$</p>
+<p>for <code>$H_f$</code> to represent <code>$f(\textbf{x})$</code>. The size of <code>$H_f$</code> grows exponentially with the number of qubits (like the vector representation of the register-bit ket).</p>
+<p>In a way <code>$H_f$</code> is a gigantic look up table, with all possible values of <code>$f(\textbf{x})$</code> on its diagonal and the solution to the optimization problem is the largest eigenvalue and corresponding eigenvector (note: eigenvectors of diagonal matrix are the cartesian basis vectors, eigenvalues are the values on the diagonal).</p>
+<p>Constructing <code>$H_f$</code> explicitly is very inefficient (np-hard&hellip;) and does not give any computationally advantage, so we will not construct it explicitly, but give a description with its fourier expansion and Pauli-Z Operators. (pseudo boolean functions??)</p>
+<p>$$Pauli_Z = Z = \begin{pmatrix} 1 &amp; 0 \cr 0 &amp; -1 \end{pmatrix}$$</p>
+<h5 id="example-maxcut">Example: MaxCut</h5>
+<p>Lets start with the QUBO (?) (quadratic unconstrained binary optimization) formulation of the MaxCut Problem.</p>
+<p>$$ C(\textbf{s}) = \frac{1}{2} \sum_{ij} (1-s_is_j)$$</p>
+<p>Here <code>$s_i$</code> is a spin variable <code>$s_i \in \{ -1, 1 \} $</code>, but we can achieve a change of variables to binary with:</p>
+<p>$$ C(\textbf{x}) = \frac{1}{2} \sum_{ij} (1-(-1)^{x_i}(-1)^{x_j})$$</p>
+<p>or even</p>
+<p>$$ C(\textbf{x}) = \sum_{ij} (x_i + x_j - 2x_ix_j)$$</p>
+<p>Note: the sum goes only over all existing edge connections.</p>
+<p>Now lets look at a specific instance of the MaxCut problem as an example.</p>
+<figure><img src="/maxcut.png" width="50%"/><figcaption>
+            <h4>MaxCut</h4>
+        </figcaption>
+</figure>
+
+<p>The nodes can be in group 0 or 1. A bitstring like 0101 describes that the first node is in group 0, the second node in group 1 etc. (take care with ordering)</p>
+<p>So to evaluate the cost function we can expand the sum to only account for the relevant (existing) edges (according to problem instance, e.g. picture).</p>
+<p>$$C(\textbf{x}) = \frac{1}{2} ( (1-(-1)^{x_1}(-1)^{x_2}) + (1-(-1)^{x_1}(-1)^{x_4}) + (1-(-1)^{x_2}(-1)^{x_4}) + (1-(-1)^{x_2}(-1)^{x_3}) + (1-(-1)^{x_3}(-1)^{x_4}))$$</p>
+<p>(five summands, as there are five edges)</p>
+<p>Pluggin in values for <code>$\textbf{x}$</code> provides the according score, so in this case the number of edges being cut.</p>
+<p>In order to construct the hamiltonian of this cost function in an effective way, we look at the action of the pauli-z operator acting on a register of qubits. Therefore we need to &ldquo;make the pauli-z&rdquo; bigger, to fit the dimension of the input vector, so we use the tensorproduct (kronecker product) with the identity matrix.</p>
+<p>$$Z_i = I \otimes &hellip; Z_i \otimes &hellip; \otimes I $$</p>
+<p>Where the Z gate appears at the ith position and only effects the ith qubit and there are as many identity matrizes as needed, to fit the size of the problem.</p>
+<p>Similary</p>
+<p>$$Z_iZ_j = I \otimes &hellip; Z_i \otimes &hellip; Z_j \otimes&hellip;  \otimes I $$</p>
+<p>Now the Z operator acting on a register of qubits gives</p>
+<p>$$Z_i \ket{\textbf{x}} = (-1)^{x_i} \ket{\textbf{x}} $$</p>
+<p>So for example</p>
+<p>$$IIZI \ket{0010} = -1 \ket{0010} $$</p>
+<p>(because this is an eigenstate with eigenvalue -1)</p>
+<p>The hamiltonian for the cost function is</p>
+<p>$$C = \frac{1}{2} \sum_{ij} (I - Z_i Z_j) $$</p>
+<p>In qiskit the sign is flipped and the constant terms (identity matrizes) are evaluated as an offset.</p>
+<p>$$-C = \frac{1}{2} \sum_{ij} (-I + Z_i Z_j) $$</p>
+<p>So four our five edge MaxCut example:</p>
+<p>$$-C = \frac{1}{2} \sum_{ij}-I + \frac{1}{2}\sum_{ij}Z_i Z_j $$
+$$-C = -2.5 I + \frac{1}{2}ZZII + \frac{1}{2}ZIIZ + \frac{1}{2}IZIZ + \frac{1}{2}IZZI + \frac{1}{2}IIZZ$$</p>
+<p>The factors in front of the pauli-z operators are called fourier coefficients.
+In general this representation can be achieved by using a fourier expansion on the original boolean function using multilinear polynomials, and then plugging in the fourier coefficients for the hamiltonian. (but calculating the fourier expansion is #P-hard)</p>
+<p>$$ f(x) = \sum_{S \in [n]} \hat f(S)x^S $$</p>
+<p>$$ C = \sum_{S \in [n]} \hat f(S) \prod_{j \in S} Z_j $$</p>
+<p>=&gt; cannot be efficiently computed (again np hard&hellip;) so use pseudo-boolean functions? (boolean function with boolean -&gt; real ?)</p>
+<p>multilinear polynomial representation (why is it called fourier?)</p>
+<p><code>$ x_S \in \{ -1, 1 \}$</code> or <code>$x_B \in \{ 0,1 \}$</code> with coordinate transform <code>$x_S = (-1)^{x_B}$</code></p>
+<p>$$H(\sigma) = \sum_{ij} J_{ij}\sigma_i \sigma_j$$</p>
+<h3 id="vqe">VQE</h3>
+<p>Variational Quantum Eigensolver</p>
+<p>=&gt; find lowest eigenvalues of Hamiltonian (= Ising?)</p>
+<h3 id="exponentiated-matrix">exponentiated matrix</h3>
+<ul>
+<li>defined over taylor series</li>
+<li>exp(matrix) = some matrix</li>
+<li>rotation?</li>
+<li>exp von diagonal matrix</li>
+<li>i?</li>
+</ul>
+<h4 id="unitary-operator">unitary operator</h4>
+<p>write unitary operator in form e^iA, with A being Hermitian
+(unitary operator preserves probability amplitude)
+hamiltonian is a hermitian matrix so e^iH is a unitary?</p>
+<h3 id="qaoa">QAOA</h3>
+<p>Quantum Approximate Optimization Algorithm</p>
+<ul>
+<li>
+<p>Algorithm for combinatorial optimization problems (e.g. MaxCut or TSP)</p>
+</li>
+<li>
+<p>different paradigm than classical algorithms: only short computation on QC (because of errors), iterative with classical computer</p>
+</li>
+<li>
+<p>determine starting angles <code>$\gamma$</code> and <code>$\beta$</code> ? (=&gt; done by the algorithm?)</p>
+</li>
+<li>
+<p>integer paramter p</p>
+</li>
+<li>
+<p>problem hamiltonian (as defined above), mixer hamiltonian</p>
+</li>
+<li>
+<p>exponentiated hamiltonian, exponentiated matrix ?</p>
+</li>
+<li>
+<p>expectation value of hamiltonian?</p>
+</li>
+<li>
+<p>QAOA needs Qubit Operator (Hamiltonian) this is implemented in Qiskit using adjacency matrix for graphs</p>
+</li>
+</ul>
+<h3 id="physik">Physik</h3>
+<ul>
+<li>Hamiltonoperator operator für Energie</li>
+<li>=&gt; Observable für Energiewerte?</li>
+<li>Eigenwerte geben Werte für Energie an</li>
+</ul>
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section id="comments">
+    <div class="py-3 content">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-sm-12 col-lg-8">
+                    <div class="comments">
+                        <script src="https://utteranc.es/client.js" repo=""
+                            issue-term="pathname" label="comment" theme="github-light" crossorigin="anonymous" async>
+                            </script>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+    
+
+
+    
+
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/highlight.min.js" integrity="sha512-TDKKr+IvoqZnPzc3l35hdjpHD0m+b2EC2SrLEgKDRWpxf2rFCxemkgvJ5kfU48ip+Y+m2XVKyOCD85ybtlZDmw==" crossorigin="anonymous"></script>
+        
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/r.min.js" defer></script>
+        
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/python.min.js" defer></script>
+        
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/stan.min.js" defer></script>
+        
+        <script>
+            window.addEventListener('load', function() {
+                hljs.initHighlighting();
+            }, true);
+        </script>
+    
+
+    
+
+    
+    
+        
+<script src="/js/math-code.js"></script>
+<script async src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+
+    
+</body>
+
+</html>
