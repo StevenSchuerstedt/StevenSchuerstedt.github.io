@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title> StevieSnake – on bare metal - Hugo Themes </title>
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="referrer" content="no-referrer">
+    <meta name="description" content="" />
+    <meta property="og:site_name" content="Hugo Themes" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://stevenschuerstedt.github.io/sketches/stevieos/" />
+    <meta property="og:title" content="StevieSnake – on bare metal" />
+    <meta property="og:image" content="https://stevenschuerstedt.github.io/" />
+    <meta property="og:description" content="" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    
+    <meta name="twitter:title" content="StevieSnake – on bare metal" />
+    <meta name="twitter:description" content="" />
+    <meta name="twitter:image" content="https://stevenschuerstedt.github.io/" />
+
+    <link rel="canonical" href="https://stevenschuerstedt.github.io/sketches/stevieos/">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha512-MoRNloxbStBcD8z3M/2BmnT+rg4IsMxPkXaGh2zD6LGNNFE80W3onsAhRcMAMrSoyWL9xD7Ert0men7vR8LUZg==" crossorigin="anonymous" />
+
+    <link rel="stylesheet" href="https://stevenschuerstedt.github.io/css/custom.css" />
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/github-gist.min.css" integrity="sha512-od7JLoOTxM8w/HSKGzP9Kexc20K9p/M2zxSWsd7H1e4Ctf+8SQFtCWEZnW5u6ul5ehSECa5QmOk9ju2nQMmlVA==" crossorigin="anonymous" />
+    
+
+    
+
+    <link rel="shortcut icon"
+        href="https://stevenschuerstedt.github.io/images/favicon.png">
+
+    
+    <link href="https://stevenschuerstedt.github.io/index.xml" rel="alternate" type="application/rss+xml" title="Hugo Themes" />
+    
+</head>
+
+<body>
+    
+    <div class="mt-xl header">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-auto">
+                <a href="https://stevenschuerstedt.github.io/">
+                    <h1 class="name">Steven Schürstedt</h1>
+					
+                </a>
+            </div>
+			<img src="https://stevenschuerstedt.github.io//ich.jpg" width="100" height="100" alt="Selfhtml">
+        </div>
+
+        <div class="row justify-content-center">
+            <ul class="nav nav-primary">
+                
+                <li class="nav-item">
+                    <a class="nav-link" href="/">
+                        
+                        Home
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link" href="/sketches/">
+                        
+                        Sketches
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link" href="/about/">
+                        
+                        About
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
+    </div>
+</div>
+
+    <div class="content">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-sm-12 col-lg-8">
+                    <h1 class="mx-0 mx-md-4">StevieSnake – on bare metal</h1>
+                    <div class="markdown">
+                        
+    <p>Nach den 8bit Computer ist die spannende Frage wie die einfachen Prinzipien sich auf ein modernes PC System übertragen. Mein Ziel ist es für ein modernen Prozessor ein einfaches Spiel on bare metal, also quasi ohne jegliche Hilfsmittel zu programmieren. Dabei wird schnell klar das ein modernes System viel komplizierter ist als der 8bit Computer, und auch viel komplizierter als es eigentlich hätte sein müssen. Gründe dafür sind vor allem praktischer Natur, zum einen die strenge Rückwärtskompatibilität und die Zurückhaltung von Informationen. Andererseits kommt zusätzliche Komplexität von allen Komponenten die Benutzt werden, wie Display, Keyboard, etc.</p>
+<p>Zuerst steht die Frage für welche Instruction Set Architectur (ISA) das Spiel programmiert werden soll. Es existieren das weitverbreitete x86 IS von Intel (welches auch von AMD benutzt wird), ARM und modernere, offene IS wie RISC-V und ForwardCom. Da ein modernes User System meist immer das x86 IS benützt entschied ich mich für diese Architektur. Das x86 IS ist unglaublich aufgeblasen und schwerfällig, was die ca. 4000 Seiten Dokumentation zeigt.</p>
+<p>On Bare Metal bedeutet jetzt dass das Spiel ohne jegliches Betriebssystem funktionieren muss, es ist quasi sein eigenes Betriebssystem. D.h. nach dem Start des PCs wird auch sofort das Spiel ausgeführt. Ganz ohne Hilfe geht es aber doch (noch) nicht, das BIOS stellt viele wichtige Funktionen bereit.</p>
+<p>PC-Start -&gt; BIOS/UEFI -&gt; Bootloader -&gt; OS</p>
+<p>Ziel: simples Spiel für x86 rechner architektur schreiben. Bios lädt über Bootloader 32 bit speicher bereich für mein spiel, danach steuert programm CPU usw.</p>
+<p>Logik für das Spiel in C / C++ schreiben, Assembler nur da benützen wo es wirklich nötig ist =&gt; sprich um die Harware zu steuern. Ausgabe am Bildschirm und Eingabe über Tastatur</p>
+<p>=&gt; einfache Treiber für Input / Output entwickeln</p>
+<p>ToDo:</p>
+<ul>
+<li>Keyboard Treiber</li>
+<li>=&gt; eigentliches Spiel</li>
+</ul>
+<h3 id="bootloader">Bootloader</h3>
+<p>Firmware, BIOS</p>
+<p>1 Byte = 8 Bits (short = 16bit, int = 32 bit, long = 64 bit)</p>
+<p>Bootloader muss direkt in Binär geschrieben werden, dafür Hex Editor um angenehmer Binär zu schreiben.</p>
+<p>Hexadezimal: höchste Zahl F = 15 = 1111, also braucht eine Ziffer in Hexadezimal maximal 4 Bits. Deswegen die Konvention eine Hexadezimalziffer entspricht genau 4 Bits, also ist Hexadezimal 1 = 0001, statt 01 oder 001. Präfix 0x für Hexadezimalzahl (mehr oder weniger willkürliche Konvention)</p>
+<p>Boot record signature 0x55, 0xAA</p>
+<p>in 32 bit Modus wechseln</p>
+<ul>
+<li>Speicher zugriff mit Segmenten</li>
+</ul>
+<p>Problem: bei einem 8 Bit oder 16 Bit oder 32 Bit Computer sind nur 2^32 Adressen für Speicher verfügbar, man möchte aber gerne mehr Speicher verwenden. Als Workaround Segmentierung des Speichers in verschiedene Blöcke.</p>
+<p>Daten von Festplatte laden mit Cylinder-Head-Sector Koordinatensystem.</p>
+<p>Interrupts um auf BIOS Funktionalität zuzugreifen (um Hardware anzusprechen). Diese BIOS Funktionen sind nur im 16bit Real Mode verfügbar.</p>
+<p>int 0x10 =&gt; ein buchstaben auf den Bildschirm schreiben</p>
+<p>int 0x13 =&gt; etwas von der Hard Disk lesen</p>
+<ul>
+<li>Wie funktioniert eine Festplatte? Festplatte mit BIOS ansprechen</li>
+<li>=&gt; Ziel: Global Descriptor Table schreiben, Festlegen welche Segmente für Protected/Paging da sein soll</li>
+<li>=&gt; für dieses Projekt einfachst Mögliche GDT =&gt; basic flat model</li>
+</ul>
+<h3 id="von-16bit-real-mode-zu-32bit-protected-mode">Von 16Bit Real Mode zu 32Bit protected Mode</h3>
+<p>Global Descriptor Table. Speicher wird Segmentiert für Sicherheit. Im GDT ist beschrieben welche Segmente es gibt. Dies wir dann gebraucht für Interrupt Descriptor Table (IDT). Wenn eine Taste auf dem Keyboard gedrückt wird muss die CPU wissen wo im Speicher dieser Interrupt behandelt wird.</p>
+<p>Im Prinzip kann dies einfach deklariert werden, mit einer Startadresse, einer Größe und Flags um was für Speicher es sich handelt und was für Zugriffsrechte es gibt, aber wegen Rückwärtskombatibilität ist der GDT unnötig kompliziert. Wir definieren zwei komplett überlappende Segmente, eines für Code und eines für Daten die genau gleich groß sind, also gibt es auch keine Sicherheit.</p>
+<p>=&gt; x86 Instruction Set ist wirklich bloated, ARM besser?</p>
+<p>=&gt; alle diese Dinge sind spezifisch für das x86 Instruction Set</p>
+<p>=&gt; andere Prozessortypen sind wohl einfacher, aber es gibt weniger Dokumentation / Tutorials darüber</p>
+<p>=&gt; gleiches Spiel für einen anderen Prozessortyp implementieren? rasberry pi mit rust</p>
+<p>Treiber</p>
+<p><strong>Grafik mit Aufbau des RAMS</strong></p>
+<p>Das Bios ist fest gecodet in einem EEPROM auf der CPU. Wenn der Computer startet lädt sich das BIOS in den RAM (weil der viel schneller ist als ein EEPROM). Der Bootloader wird dann auch in den RAM geladen, wie auch der Rest vom OS (oder Spiel). =&gt; memory layout of ram</p>
+<h3 id="codeaufbau">Codeaufbau</h3>
+<p>bootloader in assembly. BIOS benützen um mehr als 512 bytes Speicher zu laden, danach Wechsel in 32 bit protected mode (BIOS nicht mehr verfügbar). Kernel mit Treibern, eigentlichen Code in C / C++, da offensichtlich angenehmer zu programmieren. C Code wird ja zu nichts anderem als Assembly/Maschinencode kompiliert. Die Bootloader Datei und der kompilierte Kernel Code müssen dann zu einer zusammenhängenden Datei verschmolzen werden. Also quasi zusammenhängenden Speicherbereich haben. Die main Funktion wird dann als Label definiert, so dass vom Assembly Code in den C Code Bereich gesprungen werden kann.</p>
+<h3 id="grundlegende-treiber-für-inputoutput">Grundlegende Treiber für Input/Output</h3>
+<p>Größte Komplexität, meiste Arbeit beim Programmieren ist nicht Kontrollieren des Prozessors, sondern der angeschlossenen Hardware. Zum Beispiel des Monitors. Ansteuerung Monitor über VGA Standard.</p>
+<p>Memory Mapped I/O</p>
+<p>CPU hat bestimmten Adressbereich den sie kontrollieren kann, 32 bit hat 2^32 Adressen. Der 6502 hat 16 Address pins. Ein Teil dieser Addressen kontrollieren den RAM, ein anderer Teil werden nicht für den RAM benutzt sonder um I/O devices zu kontrollieren (MMIO).</p>
+<p>Vergleich 6502 Prozessor und x86</p>
+<p>=&gt; Im Prinzip das gleiche (?), aber der 6502 ist natürlich wesentlich einfacher, greifbarer und nachvollziehbarer als eine x86 Architektur, mit Motherboard, PCI, USB, usw.</p>
+<p>Beim 6502 sind die Adressen X für das LCD Display reserviert. Wieso? Weil sie so von der Hardware zusammengekabelt sind dass das Display über den Interfacer IC nur dann angesprochen wird wenn die entsprechenden Adressen ausgegeben werden. Dann können Daten in das Register des LCD Moduls gespeichert werden, welches diese dann umwandelt um schließlich etwas auszugeben.</p>
+<p>Wie lässt sich diese einfach Verfahren nun auf einen modernen Monitor übertragen? Ein bestimmter Bereich des GB großen Adressbereichs von x86 ist für den Monitor (mit VGA) reserviert.</p>
+<p>Welche Register hat ein VGA Monitor die kontrolliert werden müssen? Wie finde ich heraus welche Adressen den VGA Registern zugeordnet sind? (wird das vom BIOS erledigt?) =&gt; viele Fragen die darauf zurückzuführen sind das jmd anders das System konstruiert, es lange gewachsen ist, im Gegensatz zur selbstgebauten Hardware.</p>
+<p>=&gt; VGA Monitor hat keine Register, der Monitor zeigt lediglich die Daten an die durch das VGA Kabel geschickt werden. Die GPU hat die Register auf die geschrieben wird und die dann ein valides Signal für den Monitor erzeugt. Ist das im Prinzip Aufgabe des GPU Treibers? GPU Treiber nicht öfftenlich, also informationen Datasheets für GPUs nicht verfügbar?</p>
+<p>ToDO: – Video von Ben eater zu VGA schauen, jmd darüber fragen? Ist es vllt einfacher das ganze mit einem Rasperry Pi zu implementieren? Hat der eine überschaubarere Architektur?</p>
+<h3 id="6502-prozessor">6502 Prozessor</h3>
+<p>Bild Memory map von 6502 Prozessor (wie selbst erdacht) + Bild von Memory map x86 Prozessor</p>
+<h2 id="openhardware-risc-v">OpenHardware, RISC-V</h2>
+<p>Für moderne, kommerzielle Hardware sind kaum genaue Informationen vorhanden. Datasheets oder genaue Spezifikationen die das programmieren eines Treibers erlauben würden werden von Herstellern nicht herausgegeben. Dies ist für mich eine frustrierende Situation, da es keinen Spass macht, sich durch unvollständige Informationen im Internet zu hangeln um ein äußerst komplexes Gerät zu programmiere. Dazu kommt das kommerzielle Hardware Anforderungen hat wie Backwards-compability was das gesamte System schnell sehr aufgeblasen macht und mir die Arbeit erschwert.</p>
+<p>Heutzutage gibt es aber auch andere open source Ansätze:</p>
+<ul>
+<li>Was ist open source genau? Vorteile / Nachteile?</li>
+</ul>
+<p>RISC-V ist eine offene ISA nach dem RISC Prinzip. Es wurden bereits mehrere Prozessoren für diese Architektur entwickelt. Ich denke das ein open source Modell die Zukunft ist.</p>
+<h2 id="forwardcom">ForwardCom</h2>
+<p>Radikaler Ansatz: komplettes redesign einer ISA, ohne irgendwelche Altlasten. Wie würde ein ISA aussehen, wenn wir sie vom heutigen Standpunkt, mit dem heutigen Wissen designen? Sehr anders zu dem was momentan existiert…(vergleich David Precht redesign vom Bildungssystem/Schule).</p>
+<p>Hat das Relevanz für den Markt? Kunden wollen Geräte die mit vorhandener Software etc kompatibel sind (=&gt; großes Problem). x86 ISA unterliegt den freien Markt. Was quasi bedeutet das eher kurzfristige, schnell gewinnbringende Entscheidungen getroffen werden. Das Erfolgreichste ist leider nicht das Beste. (gibt es einen Punkt wo ein Redesign nicht mehr zu umgehen ist? Collapse under own weight)</p>
+<p>Was ist mit anderen etablierten Standards VGA, HDMI, PCI, der Prozessor ist nur ein Teil des Puzzels (vermutlich das Größte).</p>
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section id="comments">
+    <div class="py-3 content">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-sm-12 col-lg-8">
+                    <div class="comments">
+                        <script src="https://utteranc.es/client.js" repo=""
+                            issue-term="pathname" label="comment" theme="github-light" crossorigin="anonymous" async>
+                            </script>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+    
+
+
+    
+
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/highlight.min.js" integrity="sha512-TDKKr+IvoqZnPzc3l35hdjpHD0m+b2EC2SrLEgKDRWpxf2rFCxemkgvJ5kfU48ip+Y+m2XVKyOCD85ybtlZDmw==" crossorigin="anonymous"></script>
+        
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/r.min.js" defer></script>
+        
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/python.min.js" defer></script>
+        
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/stan.min.js" defer></script>
+        
+        <script>
+            window.addEventListener('load', function() {
+                hljs.initHighlighting();
+            }, true);
+        </script>
+    
+
+    
+
+    
+    
+        
+
+    
+</body>
+
+</html>

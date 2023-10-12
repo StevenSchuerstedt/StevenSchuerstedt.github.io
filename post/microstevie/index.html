@@ -1,0 +1,359 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title> MicroStevie - Hugo Themes </title>
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="referrer" content="no-referrer">
+    <meta name="description" content="" />
+    <meta property="og:site_name" content="Hugo Themes" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://stevenschuerstedt.github.io/post/microstevie/" />
+    <meta property="og:title" content="MicroStevie" />
+    <meta property="og:image" content="https://stevenschuerstedt.github.io/" />
+    <meta property="og:description" content="" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    
+    <meta name="twitter:title" content="MicroStevie" />
+    <meta name="twitter:description" content="" />
+    <meta name="twitter:image" content="https://stevenschuerstedt.github.io/" />
+
+    <link rel="canonical" href="https://stevenschuerstedt.github.io/post/microstevie/">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha512-MoRNloxbStBcD8z3M/2BmnT+rg4IsMxPkXaGh2zD6LGNNFE80W3onsAhRcMAMrSoyWL9xD7Ert0men7vR8LUZg==" crossorigin="anonymous" />
+
+    <link rel="stylesheet" href="https://stevenschuerstedt.github.io/css/custom.css" />
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/github-gist.min.css" integrity="sha512-od7JLoOTxM8w/HSKGzP9Kexc20K9p/M2zxSWsd7H1e4Ctf+8SQFtCWEZnW5u6ul5ehSECa5QmOk9ju2nQMmlVA==" crossorigin="anonymous" />
+    
+
+    
+
+    <link rel="shortcut icon"
+        href="https://stevenschuerstedt.github.io/images/favicon.png">
+
+    
+    <link href="https://stevenschuerstedt.github.io/index.xml" rel="alternate" type="application/rss+xml" title="Hugo Themes" />
+    
+</head>
+
+<body>
+    
+    <div class="mt-xl header">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-auto">
+                <a href="https://stevenschuerstedt.github.io/">
+                    <h1 class="name">Steven Schürstedt</h1>
+					
+                </a>
+            </div>
+			<img src="https://stevenschuerstedt.github.io//ich.jpg" width="100" height="100" alt="Selfhtml">
+        </div>
+
+        <div class="row justify-content-center">
+            <ul class="nav nav-primary">
+                
+                <li class="nav-item">
+                    <a class="nav-link" href="/">
+                        
+                        Home
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link" href="/sketches/">
+                        
+                        Sketches
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link" href="/about/">
+                        
+                        About
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
+    </div>
+</div>
+
+    <div class="content">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-sm-12 col-lg-8">
+                    <h1 class="mx-0 mx-md-4">MicroStevie</h1>
+                    <div class="markdown">
+                        
+    <p>MicroStevie is the implementation of a OISC (= One instruction set computer) CPU using the Basys-3 FPGA and verilog.</p>
+<p>How many instructions does a computer need to be turing complete? CISC Architectures like Intel x86 have thousand of different instructions, but what is the bare minimun needed for computation?
+As is turns out there is only one instruction needed for universal computation. This kind of architectures are called OISC and there are alot of different ways to design this one instruction. In this example I choosed the SUBLEQ instruction.</p>
+<p>SUBLEQ =&gt; subtract and branch if equal or less</p>
+<p>SUBLEQ(A, B, C)</p>
+<p>RAM[B] = RAM[B] - RAM[A]</p>
+<p>if(RAM[B] &lt;= 0)</p>
+<p>goto C</p>
+<p>To be fair this instruction is actually combining three instructions, subtract, store in memory and conditional jump. All other OISC instruction are built in a similar way.</p>
+<p>With a OISC we save a lot of hardware, since we dont need any decode mechanism, there is only one instruction anyways, so the processor always knows what to execute. The only thing that changes are the parameters.</p>
+<p>The OISC architecture is a good (or maybe quite extreme) example of the relationship and interchangeability between hardware and software. Every algorithm can be implemented in hardware directly, or in software using simpler hardware mechanisms (equality of hardware and software).
+With the OISC architecture we choose to minimize and simplify the hardware to the extreme. There is nothing we can remove from the hardware without making it loose core functionality (turing completness). But this simplicity of the hardware comes with a price, now the sofware is much more complicated. Writing a simple &ldquo;add&rdquo; or &ldquo;multiply&rdquo; programm requires a lot of thought from the programmer, and many lines of code using just the SUBLEQ instruction. So what we actually did is just to shift the complexity from hardware to software. The art in computer architecture (or in life) is to find a good balance between these two (harware/software, body/mind?).</p>
+<p>code: <a href="https://github.com/StevenSchuerstedt/MicroStevie">https://github.com/StevenSchuerstedt/MicroStevie</a></p>
+<figure><img src="/microStevie.png" width="100%"/><figcaption>
+            <h4>MicroStevie</h4>
+        </figcaption>
+</figure>
+
+<h3 id="lets-introduce-some-terminology">lets introduce some terminology</h3>
+<p>address space (total number of addressable entrys of RAM): 2^8, 256</p>
+<p>addressability (how many bits in each location): 24</p>
+<p>word size (size of one operand the alu can operate on): 24</p>
+<p>instructions: 1</p>
+<p><img src="https://github.com/StevenSchuerstedt/MicroStevie/blob/main/images/architecture_topLevel.png" alt=""></p>
+<h3 id="programming-fpga-using-verilog">Programming FPGA using Verilog</h3>
+<p>The actual implementation of the CPU uses Verilog and a FPGA. Verilog is a hardware description language (HDL). Unlike programming languages, there is no sequential execution of the code (in a way there is no execution at all..) but only a description what the hardware should look like.</p>
+<h3 id="architecture">Architecture</h3>
+<p>The basic architecture follows the von Neumann execution Model, this means data and instructions are in memory and the program is executed sequentially instruction by instruction. (SISD, single instruction / single data, in contrast to SIMD for gpus, parallel processor)
+The basic components are:</p>
+<ul>
+<li>The MicroStevie CPU, with a address line to controll the ram, and a bus line to output data</li>
+<li>some RAM, with the program and the corresponding data</li>
+<li>a clock, to synchronize everything</li>
+</ul>
+<p>The basic computing procedure is very simple, the MicroStevie CPU fetches (loads) the correct instruction from RAM (according to program counter), this instruction is placed in the insruction register and then gets executed. The results are written back into the RAM and the next instruction is fetched.</p>
+<h2 id="control-logic">Control Logic</h2>
+<p>The control logic is the heart of the cpu. It controls the flow of the modules, so they all can work together.</p>
+<p>Fetch Cycle - fetch the next operands from the RAM into the IR</p>
+<p>Execution Cycle - execute the SUBLEQ instruction</p>
+<h2 id="registers">Registers</h2>
+<p>Two general purpose registers A and B 24 bits wide, tied directly into the ALU.</p>
+<p>A memory address register for the 8 bit address of the RAM.</p>
+<p>A instruction register to hold the 24 bit &ldquo;instruction&rdquo; (because OISC, only operands), aka three 8 bit operands.</p>
+<p>A flags register for the less or equal than 0 flag.</p>
+<h3 id="inputoutput">Input/Output</h3>
+<p>MicroStevie can only output the result of the computation. Input is implicit by programming the ram directly when initializing the fpga.
+For output I decided for memory-mapped i/o, so only the SUBLEQ instruction is sufficienct for output.
+I decided memory address 100 is always written to the seven segment display of the fpga.</p>
+<h3 id="future-work">Future Work</h3>
+<h4 id="increase-speed">increase speed</h4>
+<p>There exist several techniques to improve the microarchitecture implementation of an instruction set. Most important today are <strong>Pipelining</strong> and <strong>Superscalar</strong>. These techniques increase the throughput of instructions, by using the hardware in a really efficient way. When one instruction is executed the next one will already be fetched at the same time, or multiple instructions are executed at the same time.
+This requires independence of the instructions, something which is not always guaranteed. So the hardware gets more complicated to handle these cases.</p>
+<h4 id="increase-functionality">increase functionality</h4>
+<p>There can be added more hardware to the computer, output hardware like a monitor with vga, or output hardware like keyboards. For a monitor one needs to decide how to interface with the hardware, so there could be some memory cells to address specific pixels on the monitor. For input there has to be some sort of interrupt routine, so the control logic can react to an input event. Currently MicroStevie hast to be programmed by writing directly into the ram, a next step would be to let the system program itself, so use the more advanced input and output mechanis to write a program using MicroStevie and execute it on itself.</p>
+<p>This project took roughly ~3 months</p>
+<h3 id="some-programs">some programs</h3>
+<p>The programs are of the form</p>
+<p>mem[X] &lt;= 24&rsquo;hAABBCC;</p>
+<p>Where AA, BB and CC are hex values of the operands for the SUBLEQ instruction.</p>
+<h4 id="fibonacci">fibonacci</h4>
+<p>The fibonacci numbers are calculated in mem[100]</p>
+<pre><code class="language-stan" data-lang="stan"> mem[0] &lt;= 24'h110e01;
+ 
+ mem[1] &lt;= 24'h0e1000;
+ 
+ mem[2] &lt;= 24'h0f0f03;
+ 
+ mem[3] &lt;= 24'h646404;
+ 
+ mem[4] &lt;= 24'h100f05;
+ 
+ mem[5] &lt;= 24'h0f6406;
+ 
+ mem[6] &lt;= 24'h0e0e07;
+ 
+ mem[7] &lt;= 24'h100e08;
+ 
+ mem[8] &lt;= 24'h0e1109;
+ 
+ mem[9] &lt;= 24'h0f0f0a;
+ 
+ mem[10] &lt;= 24'h64640b;
+ 
+ mem[11] &lt;= 24'h110f0c;
+ 
+ mem[12] &lt;= 24'h0f640d;
+ 
+ mem[13] &lt;= 24'h0e0e00;
+    
+ mem[14] &lt;= 0; 
+ 
+ mem[15] &lt;= 0; 
+ 
+ mem[16] &lt;= 0; 
+ 
+ mem[17] &lt;= 1;
+</code></pre><h4 id="primes">primes</h4>
+<p>The prime numbers are calculated in mem[100]. Including my comments for programming.</p>
+<pre><code class="language-stan" data-lang="stan">mem[0] &lt;= 24'h676707;
+
+mem[1] &lt;= 24'h67670a;
+
+mem[2] &lt;= 24'h68651e; //check if result in 65 is 0 or negative
+
+mem[3] &lt;= 24'h676714; // =&gt; number is divisable
+
+mem[4] &lt;= 24'h676704; //hlt
+
+mem[5] &lt;= 24'h6a6406; // =&gt; number is not divisable, test next divisor
+
+//increase tested number by 1
+
+mem[20] &lt;= 24'h6b6c15; 
+
+mem[21] &lt;= 24'h656516; //clear 65
+
+//mem[21] &lt;= 24'h676716; //clear 65
+
+mem[22] &lt;= 24'h6c6517; //copy number to 65
+
+mem[23] &lt;= 24'h6d6518; //add one
+
+mem[24] &lt;= 24'h6b6b19; //clear 
+
+mem[25] &lt;= 24'h6c6c1a;
+
+//reset divisor to two
+
+mem[26] &lt;= 24'h66661b; //clear
+
+mem[27] &lt;= 24'h6e661c; //load 2
+
+mem[28] &lt;= 24'h676700;
+
+//increase divisor by 1
+
+mem[30] &lt;= 24'h6b6c1f; 
+
+mem[31] &lt;= 24'h656520; //clear 65
+
+mem[32] &lt;= 24'h6c6521; //copy number to 65
+
+mem[33] &lt;= 24'h6b6b22; //clear 
+
+mem[34] &lt;= 24'h6c6c23;
+
+mem[35] &lt;= 24'h686624; //increase divisor by one
+
+mem[36] &lt;= 24'h656c25; 
+
+mem[37] &lt;= 24'h6c6b26; //copy number again to 6b
+
+mem[38] &lt;= 24'h6c6c27; //clear 6c 
+
+mem[39] &lt;= 24'h666b32; //if branch is taken number is prime
+
+mem[40] &lt;= 24'h6b6b00; //clear 6b and jump back
+
+
+//number is prime
+
+mem[50] &lt;= 24'h656c33;
+
+mem[51] &lt;= 24'h646434; //clear output
+
+mem[52] &lt;= 24'h6c6435; //output number
+
+mem[53] &lt;= 24'h6c6c36; //clear 6c
+
+mem[54] &lt;= 24'h6d6537; //add one to number
+
+mem[55] &lt;= 24'h666638;
+
+mem[56] &lt;= 24'h6e6639; //reset divisor to two
+
+mem[57] &lt;= 24'h676700; //repeat from begining
+       
+//copy number
+
+mem[7] &lt;= 24'h656c08;
+
+mem[8] &lt;= 24'h6c6b09;
+
+mem[9] &lt;= 24'h6c6c0a; //clear 6c
+
+mem[10] &lt;= 24'h666502;
+
+mem[11] &lt;= 24'h676701;
+
+mem[101] &lt;= 2; //number to be tested
+
+mem[102] &lt;= 2; //divisor
+
+mem[103] &lt;= 0; //always 0 to branch
+
+mem[104] &lt;= -1; //always -1 to add one
+
+mem[105] &lt;= -1;
+
+mem[106] &lt;= -2;
+
+mem[107] &lt;= 0; //6b - hold copy of number to test
+
+mem[108] &lt;= 0; //6c
+
+mem[109] &lt;= -1; //6d - add one to number to test
+
+mem[110] &lt;= -2; //always -2 to reset divisor
+</code></pre><p>When dealing with the fpga and programming a CPU I often thought about the reasons and advantages of building a processor first, and then programming the actual problem I would like to solve. For example I could use the fpga (or some basic hardware components) to directly create the fibonacci sequence or the prime numbers, and it would be arguably be less work than to first create a CPU and then programm these things with the CPU. Because what is the CPU actually doing? Well it does nothing on its own and when I want it do to something I need a program and also some input / output mechanisms. When I want it to solve another problem I need to code another program, the same way I would need to build some new hardware. So what is the advantage of building a layer of abstraction first? At first glance it is a lot of more work than to just solve the problem directly. I could build a CPU, then program a Operating System (which also really does nothing on its own), invent a programming language, a compiler etc. just to display the fibonacci numbers, something I could have achieved much simpler by just doing it directly. The power of abstraction is the pushing of limits. When I do everything in hardware directly I am limited by the means the hardware provides me. When I want to solve another problem I might not have the necessary hardware components ready. By using a layer of abstraction (like CPU) these limits almost vanish, the more I move up the ladder. I could still run out of memory if my program requires alot of space, so I would need to get more hardware, but I would argure its more unlikely and there are more things my CPU can do. But there are also limits in the way I solve the problem. With hardware components I am limited to solve my problem in the way the hardware (the physical reality) defines itselve (e.g. logic gates) but when I build a layer of abstraction I can define my own language of solving problems. I can invent a ISA or a programming language, so I can decide how the tools I use for solving my problems should look like. But still I am not completly free in my choices of tools, the logic gates are still kinda present in the sequential progression of a program.</p>
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section id="comments">
+    <div class="py-3 content">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-sm-12 col-lg-8">
+                    <div class="comments">
+                        <script src="https://utteranc.es/client.js" repo=""
+                            issue-term="pathname" label="comment" theme="github-light" crossorigin="anonymous" async>
+                            </script>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+    
+
+
+    
+
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/highlight.min.js" integrity="sha512-TDKKr+IvoqZnPzc3l35hdjpHD0m+b2EC2SrLEgKDRWpxf2rFCxemkgvJ5kfU48ip+Y+m2XVKyOCD85ybtlZDmw==" crossorigin="anonymous"></script>
+        
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/r.min.js" defer></script>
+        
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/python.min.js" defer></script>
+        
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/stan.min.js" defer></script>
+        
+        <script>
+            window.addEventListener('load', function() {
+                hljs.initHighlighting();
+            }, true);
+        </script>
+    
+
+    
+
+    
+    
+        
+
+    
+</body>
+
+</html>

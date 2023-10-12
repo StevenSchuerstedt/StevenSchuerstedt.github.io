@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title> Komplexitaetstheorie - Hugo Themes </title>
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+    <meta name="referrer" content="no-referrer">
+    <meta name="description" content="" />
+    <meta property="og:site_name" content="Hugo Themes" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://stevenschuerstedt.github.io/post/komplexitaetstheorie/" />
+    <meta property="og:title" content="Komplexitaetstheorie" />
+    <meta property="og:image" content="https://stevenschuerstedt.github.io/" />
+    <meta property="og:description" content="" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    
+    <meta name="twitter:title" content="Komplexitaetstheorie" />
+    <meta name="twitter:description" content="" />
+    <meta name="twitter:image" content="https://stevenschuerstedt.github.io/" />
+
+    <link rel="canonical" href="https://stevenschuerstedt.github.io/post/komplexitaetstheorie/">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha512-MoRNloxbStBcD8z3M/2BmnT+rg4IsMxPkXaGh2zD6LGNNFE80W3onsAhRcMAMrSoyWL9xD7Ert0men7vR8LUZg==" crossorigin="anonymous" />
+
+    <link rel="stylesheet" href="https://stevenschuerstedt.github.io/css/custom.css" />
+
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/styles/github-gist.min.css" integrity="sha512-od7JLoOTxM8w/HSKGzP9Kexc20K9p/M2zxSWsd7H1e4Ctf+8SQFtCWEZnW5u6ul5ehSECa5QmOk9ju2nQMmlVA==" crossorigin="anonymous" />
+    
+
+    
+
+    <link rel="shortcut icon"
+        href="https://stevenschuerstedt.github.io/images/favicon.png">
+
+    
+    <link href="https://stevenschuerstedt.github.io/index.xml" rel="alternate" type="application/rss+xml" title="Hugo Themes" />
+    
+</head>
+
+<body>
+    
+    <div class="mt-xl header">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-auto">
+                <a href="https://stevenschuerstedt.github.io/">
+                    <h1 class="name">Steven Schürstedt</h1>
+					
+                </a>
+            </div>
+			<img src="https://stevenschuerstedt.github.io//ich.jpg" width="100" height="100" alt="Selfhtml">
+        </div>
+
+        <div class="row justify-content-center">
+            <ul class="nav nav-primary">
+                
+                <li class="nav-item">
+                    <a class="nav-link" href="/">
+                        
+                        Home
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link" href="/sketches/">
+                        
+                        Sketches
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="nav-link" href="/about/">
+                        
+                        About
+                    </a>
+                </li>
+                
+            </ul>
+        </div>
+    </div>
+</div>
+
+    <div class="content">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-sm-12 col-lg-8">
+                    <h1 class="mx-0 mx-md-4">Komplexitaetstheorie</h1>
+                    <div class="markdown">
+                        
+    <h2 id="komplexitätstheorie">Komplexitätstheorie</h2>
+<p>Komplexitätstheorie beschäftigt sich mit der Theorie des Berechnens. Genauer mit der Komplexität von Problemen, die mit Berechnungen gelöst werden. Komplexität bezieht sich dabei auf das Maß der Verwendeten Ressourcen. Hierbei gibt es Zeit und Platz, wobei beide eng miteinander verwandt sind (?).
+Die Krux und Schwierigkeit von Komplexitätstheorie: Fokus auf der <code>$\textbf{intrinsischen}$</code> Komplexität von Problemen.
+Ein Problem kann sein: Ist Zahl X eine Primzahl? Sind diese beiden Graphen isomorph? Was ist die Lösung für dieses Sudoku? etc.
+Ein Algorithmus ist dann eine ganz konkrete Abfolge von Befehlen um ein Problem zu lösen, so dass man mit völlig stupider Einhaltung der Regeln auf jeden Fall zum Ziel kommt. Das kann ein Programm in Python oder C++ sein, oder theoretischer eine Turing-Maschine.
+Jetzt ist die Komplexität eines bestimmten Algorithmus für ein Problem hier nicht so interessant. Es geht um die intrinsische Komplexität, also was ist die Komplexität, unabhängig davon welchen Algorithmus ich wähle. (Ein Problem kann unendlich viele unterschiedliche Algorithmen haben)
+Welche Komplexität wohnt dem Problem inne und ist nicht von der genauen Gestalt eines Algorithmus abhängig? Das macht die Schwierigkeit aus.
+Anmerkung: Die Begriffe Problem, Algorithmus und Ergebnis sind sehr eng miteinander verbunden.
+Ein Problem: Finde alle Primzahlen, Ein Algorithmus: (Abfolge von Befehlen um Primzahlen zu berechnen), das Ergebnis: eine Liste von Primzahlen.
+Alle drei verschiedene Blickwinkel auf die selbe Sache?
+Wenn ich den Begriff des Problems genauer beschreibe, (also was ist genau eine Primzahl, eine Zahl die nur durch 1 und sich selbst teilbar ist, was bedeutet teilbar etc..) dann lande ich letzlich bei der Beschreibung meines Problems fast schon bei einem Algorithmus wie die Lösung zu berechnen ist. (Je nach dem, wie ich den Begriff Primzahl beschreibe, es wäre auch eine andere Beschreibung denkbar und dann ein anderer Algorithmus). Es gibt also unterschiedliche Perspektiven auf ein Problem. Was ist das Problem ohne Perspektive, also intrinsisch? Das schein Stand heute nicht wirklich klar zu sein, da hier viele Ansätze scheitern und man keine Aussagen treffen kann.</p>
+<h3 id="p">P</h3>
+<p>Die Komplexitätsklasse P ist die Menge aller Probleme die von einer deterministischen Turing-Maschine in polynomieller Zeit gelöst werden können. Die Lösung des Problems zu verfizieren ist dann quasi das selbe als den Algorithmus auszuführen. (Z.b. Multiplikation)</p>
+<h3 id="np">NP</h3>
+<p>NP ist die Menge aller Probleme die von einer nichtdeterministischen Turing-Maschine (TM mit &ldquo;Wahlmöglichkeiten&rdquo;, dabei wird jede Wahl getroffen) in polynomieller Zeit gelöst werden können. Anders: Eine deterministische TM die zusätzlich zur Eingabe X auch einen Zeugen (quasi die Lösung) bekommt, und dann in polynomieller Zeit nur verfizieren muss, das der Zeuge das Problem löst für X.
+Z.b. X ist als Eingabe ein Sudoku Feld und der Zeuge ist die Belegung der restlichen Felder. Jetzt kann in polynomieller Zeit überprüft werden ob die Lösung richtig ist.
+NP sind dann u.a. Rätsel, es ist Schwierig, bzw. unklar wie eine Lösung gefunden werden kann (im Zweifelsfall nur durch ausprobieren aller Möglichkeiten), aber wenn eine Lösung gefunden wurde, ist es einfach Einzusehen das es eine Lösung ist.</p>
+<h4 id="np-vollständig">NP-Vollständig</h4>
+<p>Ein Problem heißt NP-Vollständig wenn es in NP liegt und NP-Hart ist.
+NP-Hart:
+Ein Problem heißt NP-Hart wenn jedes Problem (Element) aus NP in polynomieller Zeit auf dieses (NP-Harte) Problem reduziert werden kann. Das NP-Harte Problem kann quasi jedes andere Problem effizient simulieren.
+Bspw. ist das Halteproblem trivialerweise NP-Hart (und Hart für alles), da jedes Problem das Berechenbar ist, auf das Halteproblem reduziert werden kann. Aber das Halteproblem liegt nicht in NP (es ist ja unberechenbar..).
+SAT ist NP-Vollständig. (Fast jedes Problem ist NP-Vollständig, es ist kein natürliches Problem bekannt, welches nicht NP-Vollständig ist)</p>
+<h3 id="die-frage-n--np">Die Frage N = NP?</h3>
+<p>Eine der sieben Millenium Fragen der Wissenschaft. Gibt es effiziente Algorithmen für wichtige Probleme wie SAT, TSP, etc? Ist alles was effizient verifizierbar ist auch effizient Berechenbar? Jedes NP Problem beinhaltet eine Suche über einen Raum vieler Möglichkeiten, ist diese Suche vermeidbar?
+Auf Musik bezogen: Ist eine Beethoven Sonate zu komponieren das Gleiche wie sie zu verstehen beim anhören? (Anmerkung: Ich würde sagen eine gegeben Komposition zu verifizieren, das es eine &ldquo;gute&rdquo; Komposition ist, kann sehr schwierig sein, liegt außerhalb der N=NP Frage)</p>
+<h4 id="schwierigkeit-der-n--np-frage">Schwierigkeit der N = NP Frage:</h4>
+<p>Es konnte gezeigt werden das bestimmte Beweistechniken nicht verwendet werden können um dieses Problem zu lösen. Genauer relativierende Beweistechniken wie Diagonalisierung. (Dieser Beweis verwendet Diagonalisierung..)</p>
+<h4 id="diagonalisierung">Diagonalisierung</h4>
+<p>Elementare Beweistechnik.(siehe Cantors Beweis zur Überabzählbarkeit) Hier wird jeder TM als Nummer dargestellt, um wieder als Eingabe für eine andere TM zu dienen (Universelle TM) =&gt; Gödelisierung.
+Jetzt sind alle TMs systematisch aufzählbar in einer Liste, dann kann über die Diagonale eine neue TM/Sprache konstruiert werden die dann (nach annahme) nicht in der Liste auftauchen kann. Diese Beweistechnik reicht bei N=NP alleine nicht aus.</p>
+<h3 id="pscpace">PSCPACE</h3>
+<p>Die Menge PSPACE ist die Menge aller Probleme die in polynomiellen Platz berechnet werden können. (Also jetzt Platz statt Zeit)
+In PSPACE liegen Spiele. Also Probleme bei denen selbst gegeben eine Lösung (gegeben eines optimalen Spielzuges im Schach) es immer noch sehr schwierig ist dann einzusehen das diese Lösung tatsächlich korrekt ist.</p>
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section id="comments">
+    <div class="py-3 content">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-sm-12 col-lg-8">
+                    <div class="comments">
+                        <script src="https://utteranc.es/client.js" repo=""
+                            issue-term="pathname" label="comment" theme="github-light" crossorigin="anonymous" async>
+                            </script>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+    
+
+
+    
+
+    
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/highlight.min.js" integrity="sha512-TDKKr+IvoqZnPzc3l35hdjpHD0m+b2EC2SrLEgKDRWpxf2rFCxemkgvJ5kfU48ip+Y+m2XVKyOCD85ybtlZDmw==" crossorigin="anonymous"></script>
+        
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/r.min.js" defer></script>
+        
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/python.min.js" defer></script>
+        
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.2.0/languages/stan.min.js" defer></script>
+        
+        <script>
+            window.addEventListener('load', function() {
+                hljs.initHighlighting();
+            }, true);
+        </script>
+    
+
+    
+
+    
+    
+        
+<script src="/js/math-code.js"></script>
+<script async src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+
+
+    
+</body>
+
+</html>
